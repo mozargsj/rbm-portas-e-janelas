@@ -2023,7 +2023,8 @@ nav {
 
 nav .container {
     width: 100%;
-    max-width: none;
+    max-width: 1440px;
+    margin: 0 auto;
     padding-right: clamp(1.25rem, 4vw, 4rem);
     padding-left: clamp(1.25rem, 4vw, 4rem);
 }
@@ -2036,6 +2037,22 @@ nav .nav-links a {
 nav .logo small {
     color: var(--off-white);
     opacity: 0.78;
+}
+
+nav .logo-aa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.08em;
+    color: var(--reference-gold);
+}
+
+nav .logo-aa i {
+    display: inline-block;
+    width: 0.46em;
+    height: 0.56em;
+    background:
+        linear-gradient(60deg, transparent 45%, currentColor 46% 54%, transparent 55%) left bottom / 51% 100% no-repeat,
+        linear-gradient(120deg, transparent 45%, currentColor 46% 54%, transparent 55%) right bottom / 51% 100% no-repeat;
 }
 
 nav .nav-links a:hover,
@@ -2066,4 +2083,10 @@ nav .cta-button:focus-visible {
 nav .cta-button:hover span,
 nav .cta-button:focus-visible span {
     color: var(--mahogany);
+}
+
+@media (max-width: 767px) {
+    nav .logo {
+        font-size: 1.35rem;
+    }
 }

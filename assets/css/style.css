@@ -2013,3 +2013,57 @@ footer a {
         gap: 1.5rem;
     }
 }
+
+/* ====== FULL-WIDTH MAHOGANY NAVIGATION ====== */
+nav {
+    width: 100%;
+    background: var(--mahogany);
+    border-bottom: 1px solid rgba(196, 155, 105, 0.35);
+}
+
+nav .container {
+    width: 100%;
+    max-width: none;
+    padding-right: clamp(1.25rem, 4vw, 4rem);
+    padding-left: clamp(1.25rem, 4vw, 4rem);
+}
+
+nav .logo,
+nav .nav-links a {
+    color: var(--off-white);
+}
+
+nav .logo small {
+    color: var(--off-white);
+    opacity: 0.78;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a:focus-visible {
+    color: var(--champagne) !important;
+}
+
+nav .nav-links a::after {
+    background: var(--champagne);
+}
+
+nav .cta-button {
+    border: 1px solid var(--champagne);
+    background: transparent;
+    color: var(--off-white);
+}
+
+nav .cta-button span {
+    color: var(--champagne);
+}
+
+nav .cta-button:hover,
+nav .cta-button:focus-visible {
+    background: var(--champagne);
+    color: var(--mahogany);
+}
+
+nav .cta-button:hover span,
+nav .cta-button:focus-visible span {
+    color: var(--mahogany);
+}

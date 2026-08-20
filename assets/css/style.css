@@ -2065,6 +2065,23 @@ nav .logo-aa i {
         linear-gradient(120deg, transparent 45%, currentColor 46% 54%, transparent 55%) right bottom / 51% 100% no-repeat;
 }
 
+nav .logo-aa {
+    position: relative;
+    display: inline-block;
+    color: var(--reference-gold);
+    letter-spacing: -0.04em;
+}
+
+nav .logo-aa::after {
+    position: absolute;
+    right: -0.04em;
+    bottom: 0.46em;
+    left: -0.04em;
+    height: 0.13em;
+    background: var(--mahogany);
+    content: "";
+}
+
 nav .nav-links a:hover,
 nav .nav-links a:focus-visible {
     color: var(--champagne) !important;

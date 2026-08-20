@@ -1511,16 +1511,26 @@ nav .container {
 }
 
 nav .logo {
-    font-size: 1.55rem;
-    line-height: 0.92;
-    letter-spacing: 0.08em;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.9rem;
+    line-height: 0.9;
+    letter-spacing: 0.12em;
+}
+
+nav .logo-wordmark {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 nav .logo small {
-    margin-top: 0.35rem;
+    margin-top: 0.45rem;
     color: var(--reference-gold);
-    font-size: 0.48rem;
-    letter-spacing: 0.19em;
+    font-size: 0.52rem;
+    letter-spacing: 0.24em;
+    line-height: 1;
 }
 
 nav .nav-links {
@@ -2048,8 +2058,8 @@ nav .logo-aa {
 
 nav .logo-aa i {
     display: inline-block;
-    width: 0.46em;
-    height: 0.56em;
+    width: 0.48em;
+    height: 0.62em;
     background:
         linear-gradient(60deg, transparent 45%, currentColor 46% 54%, transparent 55%) left bottom / 51% 100% no-repeat,
         linear-gradient(120deg, transparent 45%, currentColor 46% 54%, transparent 55%) right bottom / 51% 100% no-repeat;
@@ -2087,6 +2097,11 @@ nav .cta-button:focus-visible span {
 
 @media (max-width: 767px) {
     nav .logo {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
+    }
+
+    nav .logo small {
+        margin-top: 0.35rem;
+        font-size: 0.4rem;
     }
 }

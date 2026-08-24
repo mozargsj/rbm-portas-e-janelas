@@ -18,21 +18,41 @@ if (contactForm) {
         formStatus.textContent = '';
         formStatus.classList.remove('success', 'error');
 
-        try {
-            console.log('Form Data:', data);
-            formStatus.textContent = 'Obrigado! Entraremos em contacto em breve.';
-            formStatus.classList.add('success');
-            contactForm.reset();
-
-            setTimeout(() => {
-                formStatus.textContent = '';
-                formStatus.classList.remove('success');
-            }, 5000);
-        } catch (error) {
-            formStatus.textContent = 'Erro ao enviar. Tente novamente.';
+        if (typeof isEmailConfigured !== 'function' || !isEmailConfigured() || typeof emailjs === 'undefined') {
+            formStatus.textContent = 'O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbm.pt.';
             formStatus.classList.add('error');
-            console.error('Error:', error);
+            return;
         }
+
+        const submitButton = contactForm.querySelector('.submit-button');
+        if (submitButton) submitButton.disabled = true;
+
+        const productLabels = { door: 'Porta Blindada', window: 'Janela PVC', both: 'Ambos' };
+
+        emailjs
+            .send(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, {
+                from_name: data.name,
+                from_phone: data.phone,
+                message: 'Tipo de produto: ' + (productLabels[data.product] || data.product) + '\n\n' + data.message,
+                products: '(pedido geral via formulário de contacto, sem produtos específicos do catálogo)'
+            })
+            .then(() => {
+                formStatus.textContent = 'Obrigado! Entraremos em contacto em breve.';
+                formStatus.classList.add('success');
+                contactForm.reset();
+                setTimeout(() => {
+                    formStatus.textContent = '';
+                    formStatus.classList.remove('success');
+                }, 5000);
+            })
+            .catch((error) => {
+                formStatus.textContent = 'Erro ao enviar. Tente novamente ou contacte-nos para geral@rbm.pt.';
+                formStatus.classList.add('error');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                if (submitButton) submitButton.disabled = false;
+            });
     });
 }
 

@@ -501,6 +501,7 @@ nav .cta-button:hover {
     font-size: 0.85rem;
     color: var(--text-gray);
     line-height: 1.6;
+    transition: color 0.35s ease;
 }
 
 /* ====== CONTACT CTA ====== */
@@ -1165,7 +1166,7 @@ nav .cta-button {
 
 .process-step {
     min-height: 210px;
-    padding: 1.5rem 1.5rem 1.5rem 0;
+    padding: 1.5rem;
     border: 0;
     border-right: 1px solid var(--border);
     border-radius: 8px;
@@ -1177,12 +1178,8 @@ nav .cta-button {
     position: relative;
     z-index: 1;
     transform: translateY(-6px);
-    background-color: #fff;
+    background-color: var(--reference-wood);
     box-shadow: 0 1.25rem 2.25rem rgba(50, 27, 17, 0.12);
-}
-
-.process-step + .process-step {
-    padding-left: 1.5rem;
 }
 
 .process-step:last-child {
@@ -1197,15 +1194,25 @@ nav .cta-button {
     color: var(--champagne);
     line-height: 1;
     font-size: 0.75rem;
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, color 0.35s ease;
 }
 
 .process-step:hover .process-step-num {
     transform: translateY(-3px) scale(1.1);
+    color: var(--reference-paper);
 }
 
 .process-step h3 {
     margin-bottom: 0.75rem;
+    transition: color 0.35s ease;
+}
+
+.process-step:hover h3 {
+    color: var(--reference-paper);
+}
+
+.process-step:hover p {
+    color: rgba(246, 242, 235, 0.75);
 }
 
 .contact-cta {
@@ -1860,16 +1867,11 @@ nav .cta-button .icon {
     position: relative;
     z-index: 1;
     transform: translateY(-6px);
-    background-color: #fff;
+    background-color: var(--reference-wood);
     box-shadow: 0 1.25rem 2.25rem rgba(50, 27, 17, 0.14);
 }
 
-.differential:first-child {
-    padding-left: 0;
-}
-
 .differential:last-child {
-    padding-right: 0;
     border-right: 0;
 }
 
@@ -1880,11 +1882,21 @@ nav .cta-button .icon {
     color: var(--reference-gold);
     font-size: 2.15rem;
     line-height: 1;
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, color 0.35s ease;
 }
 
 .differential:hover .feature-icon {
     transform: translateY(-3px) scale(1.08);
+    color: var(--reference-paper);
+}
+
+.differential:hover h3,
+.differential:hover p strong {
+    color: var(--reference-paper);
+}
+
+.differential:hover p {
+    color: rgba(246, 242, 235, 0.75);
 }
 
 .differential-mark {
@@ -1896,6 +1908,7 @@ nav .cta-button .icon {
     color: var(--reference-wood);
     font-size: 0.68rem;
     letter-spacing: 0.05em;
+    transition: color 0.35s ease;
 }
 
 .differential p {
@@ -1904,10 +1917,12 @@ nav .cta-button .icon {
     color: var(--text-gray);
     font-size: 0.71rem;
     line-height: 1.45;
+    transition: color 0.35s ease;
 }
 
 .differential p strong {
     color: var(--reference-wood);
+    transition: color 0.35s ease;
 }
 
 .suppliers {

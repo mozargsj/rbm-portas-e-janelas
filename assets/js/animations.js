@@ -13,7 +13,6 @@
         document.querySelectorAll('.differentials-grid > .differential'),
         document.querySelectorAll('.suppliers .container > *'),
         document.querySelectorAll('.process-timeline > .process-step'),
-        document.querySelectorAll('.contact-cta > *'),
         document.querySelectorAll('.form-wrapper > *')
     ];
 

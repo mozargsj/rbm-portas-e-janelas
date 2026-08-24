@@ -6,6 +6,16 @@
  * abertura) são gerados automaticamente a partir dos valores usados
  * aqui, por isso não é preciso mexer em mais nenhum ficheiro.
  *
+ * Todas as portas de segurança seguem a gama Portrisa: modelo
+ * "Portrisa EURO II Start" como base da gama, e "Portrisa POWER II"
+ * como gama superior (resistência ao fogo). Nomes de acabamento
+ * conforme o "Catálogo de Acabamentos PORTRISA": interior sempre em
+ * painel Placor, cor Branco Portrisa; exterior nas cores Nogueira
+ * (coleção Nature — Nogueira Imperatur), Castanho ou Carvalho (folha
+ * decorativa amadeirada) ou Cinzento liso, consoante o produto.
+ * Nas janelas (perfil PVC/alumínio, catálogo Brillant-Design), o
+ * acabamento é interior branco e exterior nogueira.
+ *
  * Imagens: a "Porta de Segurança START" (3 variantes de cor, uma por
  * produto) e as janelas em PVC/alumínio usam especificações técnicas
  * reais (ver "destaques"). Os restantes produtos ainda usam fotos de
@@ -29,60 +39,77 @@ const PRODUCTS = [
     {
         id: "porta-blindada-classica-madeira",
         categoria: "portas",
-        material: "Madeira",
-        nome: "Porta Blindada Clássica em Madeira",
+        material: "Aço",
+        nome: "Porta de Segurança EURO II Start — Nogueira",
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
             "assets/images/products/porta-blindada-madeira-nogueira-1.jpg",
             "assets/images/products/porta-blindada-madeira-nogueira-2.jpg"
         ],
-        descricao: "Porta blindada de entrada com acabamento em madeira maciça, estrutura reforçada e fechadura de segurança multiponto. Indicada para entradas principais que exigem robustez sem abdicar de um acabamento tradicional.",
+        descricao: "Porta de segurança do modelo Portrisa EURO II Start, com estrutura em aço eletrozincado reforçada e fechadura de segurança multiponto. Acabamento exterior na coleção Nature, cor Nogueira Imperatur, e acabamento interior em painel Placor, cor Branco Portrisa — robustez de porta de segurança com o aspeto tradicional da madeira.",
         especificacoes: [
-            { label: "Categoria", valor: "Porta exterior" },
-            { label: "Material", valor: "Madeira maciça" },
+            { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Modelo", valor: "Portrisa EURO II Start" },
+            { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões", valor: "90 x 210 cm" },
             { label: "Sentido de abertura", valor: "Direita" },
-            { label: "Classe de segurança", valor: "Multiponto, classe 3" },
-            { label: "Isolamento térmico", valor: "Reforçado" },
-            { label: "Cor", valor: "Nogueira" }
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), segundo EN 1627:2011" },
+            { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
+            { label: "Acabamento exterior", valor: "Nature — Nogueira Imperatur" },
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
+            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
         ]
     },
     {
         id: "porta-lacada-branca-pvc",
         categoria: "portas",
-        material: "PVC",
-        nome: "Porta Lacada Branca em PVC",
+        material: "Aço",
+        nome: "Porta de Segurança EURO II Start — Branco",
         dimensoes: "90 x 210 cm",
         abertura: "Esquerda",
         imagens: [
             "https://plus.unsplash.com/premium_photo-1680120254458-369c37689b47?q=85&w=800&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85"
         ],
-        descricao: "Porta de entrada em PVC lacado a branco, leve manutenção e excelente isolamento térmico e acústico. Boa opção para reabilitações onde se procura um acabamento limpo e contemporâneo.",
+        descricao: "Porta de segurança do modelo Portrisa EURO II Start, com estrutura em aço eletrozincado reforçada e fechadura de segurança multiponto. Acabamento em painel Placor, cor Branco Portrisa, em ambas as faces — leve manutenção e aspeto limpo e contemporâneo.",
         especificacoes: [
-            { label: "Categoria", valor: "Porta exterior" },
-            { label: "Material", valor: "PVC" },
+            { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Modelo", valor: "Portrisa EURO II Start" },
+            { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões", valor: "90 x 210 cm" },
             { label: "Sentido de abertura", valor: "Esquerda" },
-            { label: "Classe de segurança", valor: "Multiponto, classe 2" },
-            { label: "Isolamento térmico", valor: "Standard" },
-            { label: "Cor", valor: "Branco" }
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), segundo EN 1627:2011" },
+            { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
+            { label: "Acabamento exterior", valor: "Placor — Branco Portrisa" },
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
+            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
         ]
     },
     {
         id: "porta-seguranca-start-castanho",
         categoria: "portas",
         material: "Aço",
-        nome: "Porta de Segurança START — Castanho",
+        nome: "Porta de Segurança EURO II Start — Castanho",
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
             "assets/images/products/porta-seguranca-start-castanho.jpg"
         ],
-        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em castanho, para quem procura robustez sem abdicar de um aspeto tradicional.",
+        descricao: "Porta de segurança do modelo Portrisa EURO II Start, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior castanho (folha decorativa amadeirada), para quem procura robustez sem abdicar de um aspeto tradicional.",
         especificacoes: [
             { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Modelo", valor: "Portrisa EURO II Start" },
             { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
             { label: "Sentido de abertura", valor: "Direita ou Esquerda, à escolha" },
@@ -92,28 +119,29 @@ const PRODUCTS = [
             { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
             { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
             { label: "Acabamento exterior", valor: "Castanho (folha decorativa amadeirada)" },
-            { label: "Acabamento interior", valor: "Branco liso" },
-            { label: "Cor do aro", valor: "Castanho" }
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
         ],
         destaques: [
             { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
-            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
-            { icone: "assets/images/badges/termico.png", label: "Térmico até 1,6 W/(m²K)" }
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
+            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
         ]
     },
     {
         id: "porta-seguranca-start-carvalho",
         categoria: "portas",
         material: "Aço",
-        nome: "Porta de Segurança START — Carvalho",
+        nome: "Porta de Segurança EURO II Start — Carvalho",
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
             "assets/images/products/porta-seguranca-start-carvalho.jpg"
         ],
-        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em carvalho, para quem procura robustez sem abdicar de um aspeto tradicional.",
+        descricao: "Porta de segurança do modelo Portrisa EURO II Start, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior carvalho (folha decorativa amadeirada), para quem procura robustez sem abdicar de um aspeto tradicional.",
         especificacoes: [
             { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Modelo", valor: "Portrisa EURO II Start" },
             { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
             { label: "Sentido de abertura", valor: "Direita ou Esquerda, à escolha" },
@@ -123,28 +151,29 @@ const PRODUCTS = [
             { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
             { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
             { label: "Acabamento exterior", valor: "Carvalho (folha decorativa amadeirada)" },
-            { label: "Acabamento interior", valor: "Branco liso" },
-            { label: "Cor do aro", valor: "Carvalho" }
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
         ],
         destaques: [
             { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
-            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
-            { icone: "assets/images/badges/termico.png", label: "Térmico até 1,6 W/(m²K)" }
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
+            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
         ]
     },
     {
         id: "porta-seguranca-start-cinza",
         categoria: "portas",
         material: "Aço",
-        nome: "Porta de Segurança START — Cinzento",
+        nome: "Porta de Segurança EURO II Start — Cinzento",
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
             "assets/images/products/porta-seguranca-start-cinza.jpg"
         ],
-        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em cinzento, para um aspeto contemporâneo.",
+        descricao: "Porta de segurança do modelo Portrisa EURO II Start, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior cinzento liso, para um aspeto contemporâneo.",
         especificacoes: [
             { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Modelo", valor: "Portrisa EURO II Start" },
             { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
             { label: "Sentido de abertura", valor: "Direita ou Esquerda, à escolha" },
@@ -154,13 +183,13 @@ const PRODUCTS = [
             { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
             { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
             { label: "Acabamento exterior", valor: "Cinzento liso" },
-            { label: "Acabamento interior", valor: "Branco liso" },
-            { label: "Cor do aro", valor: "Cinzento" }
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
         ],
         destaques: [
             { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
-            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
-            { icone: "assets/images/badges/termico.png", label: "Térmico até 1,6 W/(m²K)" }
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
+            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
         ]
     },
     {
@@ -174,7 +203,7 @@ const PRODUCTS = [
             "https://plus.unsplash.com/premium_photo-1677521321903-6d2bdd279267?q=88&w=1200&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
         ],
-        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões.",
+        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões. Acabamento interior branco e exterior em nogueira.",
         especificacoes: [
             { label: "Categoria", valor: "Janela" },
             { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
@@ -185,7 +214,8 @@ const PRODUCTS = [
             { label: "Isolamento acústico", valor: "Até 45 dB" },
             { label: "Estanqueidade à água", valor: "Até classe 4 (EN 1027)" },
             { label: "Resistência ao vento", valor: "Até classe C5 (EN 12211)" },
-            { label: "Cor", valor: "Branco" }
+            { label: "Acabamento interior", valor: "Branco" },
+            { label: "Acabamento exterior", valor: "Nogueira" }
         ],
         destaques: [
             { icone: "assets/images/badges/termico.png", label: "Térmico Uw = 0,95 W/(m²K)" },
@@ -203,7 +233,7 @@ const PRODUCTS = [
         imagens: [
             "assets/images/products/janela-aluminio-correr.jpg"
         ],
-        descricao: "Janela de correr em alumínio com corte térmico, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura.",
+        descricao: "Janela de correr em alumínio com corte térmico, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura. Acabamento interior branco e exterior em nogueira.",
         especificacoes: [
             { label: "Categoria", valor: "Janela" },
             { label: "Material", valor: "Alumínio com corte térmico" },
@@ -211,7 +241,105 @@ const PRODUCTS = [
             { label: "Sentido de abertura", valor: "Corredeira" },
             { label: "Vidro", valor: "Duplo" },
             { label: "Isolamento térmico", valor: "Standard" },
-            { label: "Cor", valor: "Cinza antracite" }
+            { label: "Acabamento interior", valor: "Branco" },
+            { label: "Acabamento exterior", valor: "Nogueira" }
+        ]
+    },
+    {
+        id: "porta-seguranca-power-ii-nogueira",
+        categoria: "portas",
+        material: "Aço",
+        nome: "Porta de Segurança POWER II — Nogueira",
+        dimensoes: "90 x 210 cm",
+        abertura: "Direita",
+        imagens: [
+            "assets/images/products/porta-blindada-madeira-nogueira-1.jpg",
+            "assets/images/products/porta-blindada-madeira-nogueira-2.jpg"
+        ],
+        descricao: "Porta de segurança do modelo Portrisa POWER II, com lã de rocha de alta densidade e fita intumescente no aro, garantindo resistência ao fogo além da segurança anti-arrombamento — dispensa a porta corta-fogo em separado nos patamares de acesso. Acabamento exterior na coleção Nature, cor Nogueira Imperatur, e acabamento interior em painel Placor, cor Branco Portrisa.",
+        especificacoes: [
+            { label: "Categoria", valor: "Porta de segurança corta-fogo" },
+            { label: "Modelo", valor: "Portrisa POWER II" },
+            { label: "Material", valor: "Aço eletrozincado, isolamento em lã de rocha de alta densidade" },
+            { label: "Dimensões", valor: "90 x 210 cm" },
+            { label: "Sentido de abertura", valor: "Direita" },
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), A2P* (BP1) e A2P** (BP2)" },
+            { label: "Resistência ao fogo", valor: "E45/E60, EI1 15/20/30, EI2 30/45/60/90" },
+            { label: "Atenuação acústica", valor: "34 dB (opção reforçada: 41 dB)" },
+            { label: "Isolamento térmico", valor: "Ud = 1,6 W/(m²K) (opção reforçada: 1,2 W/m²K)" },
+            { label: "Estanqueidade ao ar/água/vento", valor: "300 Pa / 200 Pa / 1200 Pa" },
+            { label: "Acabamento exterior", valor: "Nature — Nogueira Imperatur" },
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
+            { icone: "assets/images/badges/termico.png", label: "Térmico Ud = 1,6 W/(m²K)" }
+        ]
+    },
+    {
+        id: "porta-seguranca-power-ii-castanho",
+        categoria: "portas",
+        material: "Aço",
+        nome: "Porta de Segurança POWER II — Castanho",
+        dimensoes: "90 x 210 cm",
+        abertura: "Direita",
+        imagens: [
+            "assets/images/products/porta-seguranca-start-castanho.jpg"
+        ],
+        descricao: "Porta de segurança do modelo Portrisa POWER II, com lã de rocha de alta densidade e fita intumescente no aro, garantindo resistência ao fogo além da segurança anti-arrombamento — dispensa a porta corta-fogo em separado nos patamares de acesso. Acabamento exterior castanho (folha decorativa amadeirada) e acabamento interior em painel Placor, cor Branco Portrisa.",
+        especificacoes: [
+            { label: "Categoria", valor: "Porta de segurança corta-fogo" },
+            { label: "Modelo", valor: "Portrisa POWER II" },
+            { label: "Material", valor: "Aço eletrozincado, isolamento em lã de rocha de alta densidade" },
+            { label: "Dimensões", valor: "90 x 210 cm" },
+            { label: "Sentido de abertura", valor: "Direita" },
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), A2P* (BP1) e A2P** (BP2)" },
+            { label: "Resistência ao fogo", valor: "E45/E60, EI1 15/20/30, EI2 30/45/60/90" },
+            { label: "Atenuação acústica", valor: "34 dB (opção reforçada: 41 dB)" },
+            { label: "Isolamento térmico", valor: "Ud = 1,6 W/(m²K) (opção reforçada: 1,2 W/m²K)" },
+            { label: "Estanqueidade ao ar/água/vento", valor: "300 Pa / 200 Pa / 1200 Pa" },
+            { label: "Acabamento exterior", valor: "Castanho (folha decorativa amadeirada)" },
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
+            { icone: "assets/images/badges/termico.png", label: "Térmico Ud = 1,6 W/(m²K)" }
+        ]
+    },
+    {
+        id: "porta-seguranca-power-ii-carvalho",
+        categoria: "portas",
+        material: "Aço",
+        nome: "Porta de Segurança POWER II — Carvalho",
+        dimensoes: "90 x 210 cm",
+        abertura: "Direita",
+        imagens: [
+            "assets/images/products/porta-seguranca-start-carvalho.jpg"
+        ],
+        descricao: "Porta de segurança do modelo Portrisa POWER II, com lã de rocha de alta densidade e fita intumescente no aro, garantindo resistência ao fogo além da segurança anti-arrombamento — dispensa a porta corta-fogo em separado nos patamares de acesso. Acabamento exterior carvalho (folha decorativa amadeirada) e acabamento interior em painel Placor, cor Branco Portrisa.",
+        especificacoes: [
+            { label: "Categoria", valor: "Porta de segurança corta-fogo" },
+            { label: "Modelo", valor: "Portrisa POWER II" },
+            { label: "Material", valor: "Aço eletrozincado, isolamento em lã de rocha de alta densidade" },
+            { label: "Dimensões", valor: "90 x 210 cm" },
+            { label: "Sentido de abertura", valor: "Direita" },
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), A2P* (BP1) e A2P** (BP2)" },
+            { label: "Resistência ao fogo", valor: "E45/E60, EI1 15/20/30, EI2 30/45/60/90" },
+            { label: "Atenuação acústica", valor: "34 dB (opção reforçada: 41 dB)" },
+            { label: "Isolamento térmico", valor: "Ud = 1,6 W/(m²K) (opção reforçada: 1,2 W/m²K)" },
+            { label: "Estanqueidade ao ar/água/vento", valor: "300 Pa / 200 Pa / 1200 Pa" },
+            { label: "Acabamento exterior", valor: "Carvalho (folha decorativa amadeirada)" },
+            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
+            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
+            { icone: "assets/images/badges/termico.png", label: "Térmico Ud = 1,6 W/(m²K)" }
         ]
     }
 ];

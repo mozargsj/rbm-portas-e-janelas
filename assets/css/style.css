@@ -41,7 +41,7 @@ nav {
 }
 
 nav .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -116,7 +116,7 @@ nav .cta-button:hover {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -1218,7 +1218,7 @@ nav .cta-button {
 .contact-cta {
     grid-template-columns: minmax(80px, 0.25fr) minmax(0, 1fr);
     gap: 2.5rem;
-    padding: clamp(4rem, 8vw, 7rem) max(2rem, calc((100% - 1280px) / 2));
+    padding: clamp(4rem, 8vw, 7rem) max(2rem, calc((100% - 1200px) / 2));
     background: var(--cream);
 }
 
@@ -1537,7 +1537,7 @@ nav {
 
 nav .container {
     height: 80px;
-    max-width: 1440px;
+    max-width: 1200px;
     padding: 0 1.5rem;
 }
 
@@ -1845,7 +1845,7 @@ nav .cta-button .icon {
 }
 
 .differentials .container {
-    max-width: 1280px;
+    max-width: 1200px;
 }
 
 .differentials-grid {
@@ -1965,7 +1965,7 @@ nav .cta-button .icon {
     grid-template-columns: auto 1fr auto;
     gap: 1.25rem;
     align-items: center;
-    padding: 1rem max(1.5rem, calc((100% - 1280px) / 2));
+    padding: 1rem max(1.5rem, calc((100% - 1200px) / 2));
     background: var(--reference-paper);
 }
 
@@ -2014,7 +2014,7 @@ nav .cta-button .icon {
 }
 
 footer {
-    padding: 1.25rem max(1.5rem, calc((100% - 1280px) / 2));
+    padding: 1.25rem max(1.5rem, calc((100% - 1200px) / 2));
     background: var(--reference-paper);
     color: var(--reference-wood);
     border-top: 1px solid var(--reference-line);
@@ -2160,7 +2160,7 @@ nav {
 
 nav .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     padding-right: clamp(1.25rem, 4vw, 4rem);
     padding-left: clamp(1.25rem, 4vw, 4rem);

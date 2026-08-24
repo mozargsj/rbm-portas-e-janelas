@@ -28,19 +28,19 @@
 .destaque-item {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    max-width: 15rem;
+    gap: 0.85rem;
+    max-width: 17rem;
 }
 
 .destaque-icon {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 4.5rem;
+    height: 4.5rem;
     flex-shrink: 0;
 }
 
 .destaque-item span {
     color: var(--text-gray);
-    font-size: 0.78rem;
+    font-size: 1rem;
     line-height: 1.35;
 }
 
@@ -87,11 +87,28 @@
     background: var(--reference-paper);
 }
 
-.catalog-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+/* O filtro fica fora do container de 1200px: o "shell" acomoda o
+ * filtro (largura fixa) mais o container de conteúdo lado a lado,
+ * e é o conjunto que fica centrado na página. */
+.catalog-shell {
+    display: flex;
+    align-items: flex-start;
     gap: 2.75rem;
-    align-items: start;
+    max-width: calc(1200px + 260px + 2.75rem + 4rem);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.catalog-filters {
+    flex: 0 0 260px;
+    position: sticky;
+    top: 1.5rem;
+}
+
+.catalog-main {
+    flex: 1 1 auto;
+    max-width: 1200px;
+    min-width: 0;
 }
 
 .filters-header {
@@ -1069,9 +1086,9 @@ body.lightbox-open {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.75rem;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem max(1.5rem, calc((100% - 1280px) / 2)) 1.5rem;
+    padding: 1rem max(1.5rem, calc((100% - 1200px) / 2)) 1.5rem;
     border-top: 1px solid var(--reference-line);
     color: var(--text-gray);
     font-size: 0.7rem;
@@ -1083,8 +1100,14 @@ body.lightbox-open {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 899px) {
-    .catalog-layout {
-        grid-template-columns: 1fr;
+    .catalog-shell {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 1200px;
+    }
+
+    .catalog-main {
+        max-width: 100%;
     }
 
     .filters-toggle {
@@ -1102,6 +1125,9 @@ body.lightbox-open {
     }
 
     .catalog-filters {
+        flex-basis: auto;
+        width: 100%;
+        position: static;
         padding: 1rem 1.25rem;
         border: 1px solid var(--reference-line);
         border-radius: 4px;

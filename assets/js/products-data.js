@@ -34,8 +34,8 @@ const PRODUCTS = [
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
-            "https://plus.unsplash.com/premium_photo-1676893374848-220c6eaad411?q=88&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+            "assets/images/products/porta-blindada-madeira-nogueira-1.jpg",
+            "assets/images/products/porta-blindada-madeira-nogueira-2.jpg"
         ],
         descricao: "Porta blindada de entrada com acabamento em madeira maciça, estrutura reforçada e fechadura de segurança multiponto. Indicada para entradas principais que exigem robustez sem abdicar de um acabamento tradicional.",
         especificacoes: [
@@ -201,8 +201,7 @@ const PRODUCTS = [
         dimensoes: "150 x 120 cm",
         abertura: "Corredeira",
         imagens: [
-            "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85",
-            "https://plus.unsplash.com/premium_photo-1687960116947-11ecc22f45c0?q=88&w=1800&auto=format&fit=crop"
+            "assets/images/products/janela-aluminio-correr.jpg"
         ],
         descricao: "Janela de correr em alumínio com corte térmico, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura.",
         especificacoes: [
@@ -223,8 +222,7 @@ const PRODUCTS = [
         dimensoes: "100 x 130 cm",
         abertura: "Oscilobatente",
         imagens: [
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85",
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+            "assets/images/products/janela-madeira-carvalho.jpg"
         ],
         descricao: "Janela de batente em madeira, acabamento tradicional indicado para fachadas em pedra ou reabilitações onde se pretende manter a estética original.",
         especificacoes: [

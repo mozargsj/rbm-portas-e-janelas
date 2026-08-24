@@ -27,6 +27,7 @@ assets/
         email-config.js                # Chaves do EmailJS (preencher — ver secção abaixo)
     images/
         products/                    # Fotos reais de produtos (fornecidas pelos fabricantes)
+        hero/                         # Fotos usadas nos fundos da home (hero + grid de produtos)
         brands/                      # Logótipos reais de fornecedores (ex. Portrisa)
         badges/                      # Ícones de características reais (segurança/acústico/térmico/estanqueidade)
 ```
@@ -41,7 +42,7 @@ O `index.html` tem de ficar na raiz do repositório porque é isso que o GitHub 
 ### Catálogo de produtos: fonte única de dados
 Todos os produtos vêm de um único array, `PRODUCTS`, em [`assets/js/products-data.js`](assets/js/products-data.js). **Para adicionar um produto novo, basta acrescentar um objeto a este array** — nome, categoria, material, dimensões, sentido de abertura, imagens, descrição e uma tabela de especificações. Não é preciso mexer em mais nenhum ficheiro:
 - Os filtros da página de catálogo (categoria, material, sentido de abertura) são **gerados automaticamente** a partir dos valores usados no array — por isso "aprendem" sozinhos à medida que o catálogo cresce.
-- A **Porta de Segurança START** (3 produtos, um por cor — castanho, carvalho, cinzento, cada um com 1 imagem real) e a **Janela PVC Oscilobatente Brillant-Design 70** já usam especificações técnicas reais (extraídas de fichas técnicas). Não é mostrado o nome do fabricante em nenhum destes produtos (por decisão do cliente). Os restantes produtos ainda usam fotos de stock (Unsplash) como placeholder — substituir por fotos reais assim que existirem.
+- A **Porta de Segurança START** (3 produtos, um por cor — castanho, carvalho, cinzento, cada um com 1 imagem real) já usa especificações técnicas reais (extraídas de fichas técnicas). Não é mostrado o nome do fabricante em nenhum produto. **Porta Blindada Clássica em Madeira**, **Janela de Correr em Alumínio** e **Janela Clássica em Madeira** também já têm fotos reais (`assets/images/products/`). Só a **Porta Lacada Branca em PVC** e a **Janela PVC Oscilobatente Brillant-Design 70** ainda usam fotos de stock (Unsplash) como placeholder, por falta de foto real com a cor certa (branco) — substituir assim que existir.
 - `imagens` aceita tanto caminhos locais (`assets/images/products/...`) como URLs completos. Usar sempre `resolveAssetPath(caminho)` (definida em `products-data.js`) ao apresentar uma imagem — resolve automaticamente o `../` necessário nas páginas dentro de `pags/`.
 - `destaques` (opcional): lista de selos com ícone + texto, mostrados na ficha de produto (ex. os selos reais de segurança/acústico/térmico/estanqueidade em `assets/images/badges/`).
 - `abertura`: nas janelas, usar sempre "Oscilobatente" ou "Corredeira" (os dois sentidos de abertura padronizados no catálogo); nas portas, "Direita" ou "Esquerda".
@@ -76,6 +77,7 @@ Não há build nem servidor — basta abrir `index.html` num browser. Para testa
 
 > Sempre que uma funcionalidade nova for adicionada ao site, acrescentar uma entrada aqui (data + resumo). Isto mantém o histórico de decisões visível sem ter de vasculhar o `git log`.
 
+- **2026-08-24** — Fotos de stock (Unsplash) substituídas por fotos reais em `assets/images/hero/` (fundo do hero e das 4 caixas do grid de produtos da home) e em `assets/images/products/` (Porta Blindada Clássica em Madeira, Janela de Correr em Alumínio, Janela Clássica em Madeira). Só a Porta Lacada Branca em PVC e a Janela PVC Oscilobatente continuam com placeholder, por não haver ainda foto real na cor branca.
 - **2026-08-24** — Ficha de produto: imagens abrem em lightbox de ecrã inteiro com navegação entre fotos (setas, miniaturas, teclado, clique fora fecha). Porta de Segurança START dividida em 3 produtos (um por cor/imagem), com o nome do fabricante removido do título e da ficha e novos campos de especificação (acabamento interior, acabamento exterior, cor do aro). Janelas passam a usar "Oscilobatente" ou "Corredeira" como sentido de abertura padrão. Ícones de destaque (segurança/acústico/térmico) aumentados. Carrinho de orçamento ganha botões +/- para ajustar a quantidade de cada produto sem sair do carrinho.
 - **2026-08-24** — Card do catálogo passa a ser clicável por inteiro (antes só o link "Ver Detalhes" navegava para a ficha do produto).
 - **2026-08-24** — Fotos e especificações reais da Portrisa (Porta de Segurança START) e Teccarsa (Janela Brillant-Design 70) a substituir 2 dos produtos placeholder, com selos de destaque (segurança/acústico/térmico/estanqueidade) usando os ícones e logótipo reais dos fabricantes.

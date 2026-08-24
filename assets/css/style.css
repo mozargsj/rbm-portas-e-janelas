@@ -1605,7 +1605,7 @@ nav .cta-button .icon {
     gap: 1rem;
     padding: 3rem clamp(2rem, 6.8vw, 6.5rem);
     background-color: var(--reference-wood);
-    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.91), rgba(50, 27, 17, 0.84)), url("https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80");
+    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.91), rgba(50, 27, 17, 0.84)), url("../images/hero/hero-textura.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -1676,7 +1676,7 @@ nav .cta-button .icon {
 .hero-image {
     min-height: 0;
     padding: 2rem clamp(1.5rem, 4vw, 4rem);
-    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.05), rgba(50, 27, 17, 0.28)), url("https://plus.unsplash.com/premium_photo-1687960116947-11ecc22f45c0?q=88&w=1800&auto=format&fit=crop");
+    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.05), rgba(50, 27, 17, 0.28)), url("../images/hero/hero-porta-principal.jpg");
     background-position: center;
 }
 
@@ -1714,11 +1714,11 @@ nav .cta-button .icon {
 }
 
 .grid-item.image-door {
-    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("https://plus.unsplash.com/premium_photo-1676893374848-220c6eaad411?q=88&w=1200&auto=format&fit=crop");
+    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("../images/hero/grid-porta.jpg");
 }
 
 .grid-item.image-window {
-    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("https://plus.unsplash.com/premium_photo-1677521321903-6d2bdd279267?q=88&w=1200&auto=format&fit=crop");
+    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("../images/hero/grid-janela.jpg");
 }
 
 .grid-item.card {
@@ -1733,11 +1733,11 @@ nav .cta-button .icon {
 }
 
 .grid-item.card-portas {
-    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("https://images.unsplash.com/photo-1613544723301-176686aa9f09?q=85&w=800&auto=format&fit=crop");
+    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("../images/hero/grid-porta-card.jpg");
 }
 
 .grid-item.card-janelas {
-    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("https://images.unsplash.com/photo-1616843221271-a3447ca74df3?q=85&w=800&auto=format&fit=crop");
+    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("../images/hero/grid-janela-card.jpg");
 }
 
 .grid-item.card .product-icon {

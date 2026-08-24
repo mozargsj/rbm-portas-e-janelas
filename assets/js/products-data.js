@@ -213,26 +213,5 @@ const PRODUCTS = [
             { label: "Isolamento térmico", valor: "Standard" },
             { label: "Cor", valor: "Cinza antracite" }
         ]
-    },
-    {
-        id: "janela-madeira-classica",
-        categoria: "janelas",
-        material: "Madeira",
-        nome: "Janela Clássica em Madeira",
-        dimensoes: "100 x 130 cm",
-        abertura: "Oscilobatente",
-        imagens: [
-            "assets/images/products/janela-madeira-carvalho.jpg"
-        ],
-        descricao: "Janela de batente em madeira, acabamento tradicional indicado para fachadas em pedra ou reabilitações onde se pretende manter a estética original.",
-        especificacoes: [
-            { label: "Categoria", valor: "Janela" },
-            { label: "Material", valor: "Madeira" },
-            { label: "Dimensões", valor: "100 x 130 cm" },
-            { label: "Sentido de abertura", valor: "Oscilobatente" },
-            { label: "Vidro", valor: "Duplo" },
-            { label: "Isolamento térmico", valor: "Standard" },
-            { label: "Cor", valor: "Carvalho natural" }
-        ]
     }
 ];

@@ -56,6 +56,17 @@ if (contactForm) {
     });
 }
 
+// Cards do grid de produtos são clicáveis no todo, não só no link "Ver..."
+document.querySelectorAll('.grid-item.card').forEach((card) => {
+    const link = card.querySelector('a[href]');
+    if (!link) return;
+    card.classList.add('is-clickable');
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        window.location.href = link.getAttribute('href');
+    });
+});
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

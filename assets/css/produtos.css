@@ -58,13 +58,13 @@
 }
 
 .page-header h1 {
-    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    font-size: var(--fs-h1);
     letter-spacing: -0.03em;
 }
 
 .page-header p {
     color: rgba(246, 242, 235, 0.75);
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     max-width: 46ch;
 }
 
@@ -121,7 +121,7 @@
 .filters-header h2 {
     margin: 0;
     color: var(--reference-wood);
-    font-size: 0.95rem;
+    font-size: var(--fs-h2-compact);
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -547,7 +547,7 @@
 .product-info h1 {
     margin: 0.5rem 0 1rem;
     color: var(--reference-wood);
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-size: var(--fs-h1);
     letter-spacing: -0.02em;
 }
 
@@ -558,7 +558,7 @@
 .product-description {
     margin: 0 0 1.75rem;
     color: var(--text-gray);
-    font-size: 0.92rem;
+    font-size: var(--fs-body);
     line-height: 1.65;
 }
 
@@ -586,7 +586,7 @@
 .product-specs h2 {
     margin-bottom: 1rem;
     color: var(--reference-wood);
-    font-size: 1.25rem;
+    font-size: var(--fs-h2-compact);
 }
 
 .specs-table {
@@ -623,6 +623,7 @@
 .product-not-found h1 {
     margin-bottom: 0.75rem;
     color: var(--reference-wood);
+    font-size: var(--fs-h1);
 }
 
 /* ====== STICKY PRODUCT BAR ====== */
@@ -767,7 +768,7 @@
 .cart-drawer-header h2 {
     margin: 0;
     color: var(--reference-wood);
-    font-size: 1.1rem;
+    font-size: var(--fs-h2-compact);
 }
 
 .cart-close {
@@ -1053,19 +1054,20 @@ body.lightbox-open {
 .legal-page h1 {
     margin-bottom: 0.5rem;
     color: var(--reference-wood);
+    font-size: var(--fs-h1);
 }
 
 .legal-page h2 {
     margin-top: 2.25rem;
     margin-bottom: 0.75rem;
     color: var(--reference-wood);
-    font-size: 1.15rem;
+    font-size: var(--fs-h2-compact);
 }
 
 .legal-page p,
 .legal-page li {
     color: var(--text-gray);
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     line-height: 1.7;
 }
 

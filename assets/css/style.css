@@ -22,6 +22,10 @@
 
 html {
     scroll-behavior: smooth;
+    /* Escala tipográfica global: como quase todo o texto e espaçamento
+     * do site é definido em rem, este único valor aumenta tudo de forma
+     * proporcional, preservando as relações de tamanho já desenhadas. */
+    font-size: 110%;
 }
 
 body {
@@ -440,7 +444,7 @@ nav .cta-button:hover {
 }
 
 .process-intro {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     color: var(--text-gray);
     margin-bottom: 3rem;
     max-width: 500px;
@@ -489,7 +493,7 @@ nav .cta-button:hover {
 }
 
 .process-step h3 {
-    font-size: 1rem;
+    font-size: var(--fs-h3-compact);
     color: var(--mahogany);
     margin-bottom: 0.5rem;
     font-weight: 700;
@@ -498,7 +502,7 @@ nav .cta-button:hover {
 }
 
 .process-step p {
-    font-size: 0.85rem;
+    font-size: var(--fs-body);
     color: var(--text-gray);
     line-height: 1.6;
     transition: color 0.35s ease;
@@ -604,7 +608,7 @@ nav .cta-button:hover {
 }
 
 .form-section > .container > p {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2.5rem;
     line-height: 1.6;
@@ -1001,7 +1005,7 @@ nav .cta-button {
 .form-section h2 {
     margin-bottom: 0.9rem;
     color: var(--mahogany);
-    font-size: clamp(2rem, 3.8vw, 3.65rem);
+    font-size: var(--fs-h2);
     line-height: 1.03;
     letter-spacing: -0.055em;
 }
@@ -1016,7 +1020,7 @@ nav .cta-button {
 .section-heading > p:last-child {
     max-width: 34ch;
     color: var(--text-gray);
-    font-size: 0.94rem;
+    font-size: var(--fs-body);
 }
 
 .grid-showcase {
@@ -1423,7 +1427,7 @@ textarea:focus-visible {
     .section-heading h2,
     .process h2,
     .form-section h2 {
-        font-size: 2.35rem;
+        font-size: var(--fs-h2);
     }
 
     .grid-showcase,
@@ -1513,6 +1517,27 @@ textarea:focus-visible {
     --reference-paper: #f6f2eb;
     --reference-gold: #b57d2e;
     --reference-line: #dfd3c3;
+
+    /* Escala tipográfica única do site: h1-h4 e texto de descrição usam
+     * sempre uma destas variáveis (nunca um valor fixo à parte), para que
+     * alterar um nível de heading aqui mude todos os usos de uma vez.
+     * --fs-h1-display é a exceção deliberada: o título da hero tem um
+     * papel visual próprio (destaque de página inteira), não é "mais um h1". */
+    --fs-h1-display: clamp(2.6rem, 4.5vw, 4.35rem);
+    --fs-h1: clamp(1.75rem, 3.4vw, 2.5rem);
+    --fs-h2: clamp(2rem, 3.8vw, 3.65rem);
+    --fs-h2-compact: 1.1rem;
+    --fs-h3: clamp(1.65rem, 2.4vw, 2.5rem);
+    --fs-h3-compact: 1rem;
+    --fs-h4: 1.1rem;
+    --fs-body: 1rem;
+    --fs-caption: 0.85rem;
+}
+
+h4 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: var(--fs-h4);
 }
 
 body {
@@ -1545,7 +1570,7 @@ nav .logo {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 1.9rem;
+    font-size: 2.5rem;
     line-height: 0.9;
     letter-spacing: 0.12em;
 }
@@ -1557,9 +1582,9 @@ nav .logo-wordmark {
 }
 
 nav .logo small {
-    margin-top: 0.45rem;
+    margin-top: 0.5rem;
     color: var(--reference-gold);
-    font-size: 0.52rem;
+    font-size: 0.72rem;
     letter-spacing: 0.24em;
     line-height: 1;
 }
@@ -1629,7 +1654,7 @@ nav .cta-button .icon {
 .hero-content h1 {
     max-width: 8.5ch;
     color: var(--reference-paper);
-    font-size: clamp(2.6rem, 4.5vw, 4.35rem);
+    font-size: var(--fs-h1-display);
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -0.035em;
@@ -1651,7 +1676,7 @@ nav .cta-button .icon {
 .hero-content p:not(.eyebrow) {
     max-width: 30ch;
     color: rgba(246, 242, 235, 0.82);
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     line-height: 1.5;
 }
 
@@ -1695,36 +1720,31 @@ nav .cta-button .icon {
     display: none;
 }
 
+/* Simétrico com a hero (imagem 1.08fr | painel 0.92fr), mas
+ * espelhado: imagem à esquerda, painel de cards à direita. */
 .grid-showcase {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
-    grid-auto-rows: 245px;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-rows: repeat(2, minmax(245px, 1fr));
     gap: 0;
 }
 
 .grid-item,
-.grid-item.image-door,
 .grid-item.image-window,
 .grid-item.card {
     min-height: 245px;
     border-radius: 0;
 }
 
-.grid-item.image-door,
 .grid-item.image-window {
+    grid-column: 1;
+    grid-row: 1 / 3;
     padding: 1.25rem clamp(1.25rem, 3vw, 3rem);
-}
-
-.grid-item.image-door {
-    background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("../images/hero/grid-porta.jpg");
-}
-
-.grid-item.image-window {
     background-image: linear-gradient(180deg, rgba(50, 27, 17, 0.08), rgba(50, 27, 17, 0.42)), url("../images/hero/grid-janela.jpg");
 }
 
 .grid-item.card {
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem clamp(1.25rem, 3vw, 3rem);
     border-top: 0;
     background-color: var(--reference-wood);
@@ -1752,19 +1772,19 @@ nav .cta-button .icon {
 .grid-item.card h3 {
     margin-bottom: 0.65rem;
     color: var(--reference-paper);
-    font-size: clamp(1.65rem, 2.4vw, 2.5rem);
+    font-size: var(--fs-h3);
     letter-spacing: -0.04em;
 }
 
 .grid-item.card p {
     margin-bottom: 1.25rem;
     color: rgba(246, 242, 235, 0.78);
-    font-size: 0.83rem;
+    font-size: var(--fs-h4);
     line-height: 1.45;
 }
 
 .grid-item.card a {
-    margin-top: 0;
+    margin-top: auto;
     padding-bottom: 0.2rem;
     border-bottom: 1px solid var(--reference-gold);
     color: var(--reference-gold);
@@ -1782,28 +1802,6 @@ nav .cta-button .icon {
     transform: translateX(0.3rem);
 }
 
-@media (min-width: 1024px) {
-    .grid-showcase .grid-item:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1 / 3;
-    }
-
-    .grid-showcase .grid-item:nth-child(2) {
-        grid-column: 3;
-        grid-row: 1 / 3;
-    }
-
-    .grid-showcase .grid-item:nth-child(3) {
-        grid-column: 4;
-        grid-row: 1 / 3;
-    }
-
-    .grid-showcase .grid-item:nth-child(4) {
-        grid-column: 2;
-        grid-row: 1 / 3;
-    }
-}
-
 .hero-image {
     position: relative;
     overflow: hidden;
@@ -1811,7 +1809,6 @@ nav .cta-button .icon {
 }
 
 .hero-image::before,
-.grid-item.image-door::before,
 .grid-item.image-window::before,
 .grid-item.card::before {
     content: "";
@@ -1825,7 +1822,6 @@ nav .cta-button .icon {
 }
 
 .hero-image:hover::before,
-.grid-item.image-door:hover::before,
 .grid-item.image-window:hover::before,
 .grid-item.card:hover::before {
     transform: scale(1.1);
@@ -1833,6 +1829,10 @@ nav .cta-button .icon {
 
 .grid-item.card {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.grid-item.card.is-clickable {
+    cursor: pointer;
 }
 
 .grid-item.card:hover {
@@ -1907,7 +1907,7 @@ nav .cta-button .icon {
 .differential h3 {
     margin-bottom: 0.45rem;
     color: var(--reference-wood);
-    font-size: 0.68rem;
+    font-size: var(--fs-h3-compact);
     letter-spacing: 0.05em;
     transition: color 0.35s ease;
 }
@@ -1916,7 +1916,7 @@ nav .cta-button .icon {
     max-width: 22ch;
     margin: 0 auto;
     color: var(--text-gray);
-    font-size: 0.71rem;
+    font-size: var(--fs-caption);
     line-height: 1.45;
     transition: color 0.35s ease;
 }
@@ -1939,7 +1939,7 @@ nav .cta-button .icon {
 .suppliers h3 {
     margin-bottom: 0.4rem;
     color: var(--off-white);
-    font-size: 0.62rem;
+    font-size: var(--fs-h3-compact);
     letter-spacing: 0.08em;
 }
 
@@ -1982,7 +1982,7 @@ nav .cta-button .icon {
 .contact-content h2 {
     margin-bottom: 0.1rem;
     color: var(--reference-wood);
-    font-size: 0.86rem;
+    font-size: var(--fs-h2-compact);
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
@@ -1990,7 +1990,7 @@ nav .cta-button .icon {
 .contact-content p {
     margin: 0;
     color: var(--text-gray);
-    font-size: 0.72rem;
+    font-size: var(--fs-caption);
 }
 
 .contact-button {
@@ -2030,13 +2030,13 @@ footer .container {
 footer h3 {
     margin-bottom: 0.25rem;
     color: var(--reference-wood);
-    font-size: 1.25rem;
+    font-size: var(--fs-h3-compact);
     letter-spacing: 0.08em;
 }
 
 footer p {
     color: var(--text-gray);
-    font-size: 0.7rem;
+    font-size: var(--fs-caption);
     line-height: 1.45;
 }
 
@@ -2084,12 +2084,17 @@ footer a {
     }
 
     .grid-showcase {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
         grid-auto-rows: 250px;
     }
 
+    .grid-item.image-window {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
     .grid-item,
-    .grid-item.image-door,
     .grid-item.image-window,
     .grid-item.card {
         min-height: 250px;
@@ -2157,6 +2162,13 @@ nav {
     width: 100%;
     background: var(--mahogany);
     border-bottom: 1px solid rgba(196, 155, 105, 0.35);
+    transition: transform 0.35s ease;
+}
+
+/* Some para baixo no scroll para baixo, reaparece no scroll para cima
+ * (classe controlada por assets/js/nav-scroll.js). */
+nav.nav-hidden {
+    transform: translateY(-100%);
 }
 
 nav .container {
@@ -2178,36 +2190,8 @@ nav .logo small {
 }
 
 nav .logo-aa {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.08em;
-    color: var(--reference-gold);
-}
-
-nav .logo-aa i {
-    display: inline-block;
-    width: 0.48em;
-    height: 0.62em;
-    background:
-        linear-gradient(60deg, transparent 45%, currentColor 46% 54%, transparent 55%) left bottom / 51% 100% no-repeat,
-        linear-gradient(120deg, transparent 45%, currentColor 46% 54%, transparent 55%) right bottom / 51% 100% no-repeat;
-}
-
-nav .logo-aa {
-    position: relative;
     display: inline-block;
     color: var(--reference-gold);
-    letter-spacing: -0.04em;
-}
-
-nav .logo-aa::after {
-    position: absolute;
-    right: -0.04em;
-    bottom: 0.46em;
-    left: -0.04em;
-    height: 0.13em;
-    background: var(--mahogany);
-    content: "";
 }
 
 nav .nav-links a:hover,
@@ -2242,12 +2226,12 @@ nav .cta-button:focus-visible .icon {
 
 @media (max-width: 767px) {
     nav .logo {
-        font-size: 1.5rem;
+        font-size: 1.9rem;
     }
 
     nav .logo small {
-        margin-top: 0.35rem;
-        font-size: 0.4rem;
+        margin-top: 0.3rem;
+        font-size: 0.52rem;
     }
 }
 

@@ -7,6 +7,48 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none" aria-hidden="true">
+        <symbol id="icon-door-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 12h.01" />
+            <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14" />
+            <path d="M2 20h20" />
+        </symbol>
+        <symbol id="icon-grid-2x2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18" />
+            <path d="M3 12h18" />
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+        </symbol>
+        <symbol id="icon-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 17V7" />
+            <path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8" />
+            <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" />
+        </symbol>
+        <symbol id="icon-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+            <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="icon-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9" />
+            <path d="m18 15 4-4" />
+            <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
+        </symbol>
+        <symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+            <circle cx="12" cy="10" r="3" />
+        </symbol>
+        <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+            <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </symbol>
+        <symbol id="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
     <!-- Navigation -->
     <nav aria-label="Navegação principal">
@@ -18,7 +60,7 @@
                 <li><a href="#differentials">Qualidade</a></li>
                 <li><a href="#form">Contactos</a></li>
             </ul>
-            <a class="cta-button" href="#form"><span aria-hidden="true">▣</span> Pedir orçamento</a>
+            <a class="cta-button" href="#form"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-receipt"></use></svg> Pedir orçamento</a>
         </div>
     </nav>
 
@@ -30,7 +72,7 @@
             <h1 id="hero-title">A entrada<br>da sua <span class="accent">casa</span>.</h1>
             <span class="hero-rule" aria-hidden="true"></span>
             <p>Portas e janelas de qualidade, fornecidas por marcas certificadas e instaladas por nós.</p>
-            <a class="hero-cta" href="#products">Conhecer produtos <span aria-hidden="true">→</span></a>
+            <a class="hero-cta" href="#products">Conhecer produtos <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
         </div>
         <div class="hero-image" role="img" aria-label="Porta de entrada em madeira com janela lateral">
             <span class="image-caption">Entrada residencial <strong>01 / 03</strong></span>
@@ -45,16 +87,16 @@
                 <span class="image-caption">Portas blindadas <strong>01</strong></span>
             </div>
             <div class="grid-item card">
-                <span class="product-icon" aria-hidden="true">▣</span>
+                <svg class="product-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-door-closed"></use></svg>
                 <h3>Portas</h3>
                 <p>Blindadas, técnicas<br>e interiores.</p>
-                <a href="#differentials">Ver portas <span aria-hidden="true">→</span></a>
+                <a href="#differentials">Ver portas <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
             </div>
             <div class="grid-item card">
-                <span class="product-icon" aria-hidden="true">▦</span>
+                <svg class="product-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid-2x2"></use></svg>
                 <h3>Janelas</h3>
                 <p>PVC e alumínio<br>com alto desempenho.</p>
-                <a href="#differentials">Ver janelas <span aria-hidden="true">→</span></a>
+                <a href="#differentials">Ver janelas <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
             </div>
             <div class="grid-item image-window" role="img" aria-label="Janela PVC com vista para o exterior">
                 <span class="image-caption">Janelas PVC <strong>02</strong></span>
@@ -68,25 +110,25 @@
         <div class="container">
             <div class="differentials-grid">
                 <div class="differential">
-                    <div class="feature-icon" aria-hidden="true">⌁</div>
+                    <div class="feature-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-badge-check"></use></svg></div>
                     <div class="differential-mark" aria-hidden="true">01</div>
                     <h3>Marcas certificadas</h3>
                     <p>Trabalhamos com fornecedores de referência no mercado: <strong>Portrisa</strong> e <strong>Teccarsa</strong>.</p>
                 </div>
                 <div class="differential">
-                    <div class="feature-icon" aria-hidden="true">⌕</div>
+                    <div class="feature-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-hammer"></use></svg></div>
                     <div class="differential-mark" aria-hidden="true">02</div>
                     <h3>Instalação própria</h3>
                     <p>Equipa própria, sem subcontratação. Mais controlo, qualidade e segurança.</p>
                 </div>
                 <div class="differential">
-                    <div class="feature-icon" aria-hidden="true">⌖</div>
+                    <div class="feature-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-map-pin"></use></svg></div>
                     <div class="differential-mark" aria-hidden="true">03</div>
                     <h3>Presença local</h3>
                     <p>Atendimento próximo e acompanhamento em todas as fases do projeto.</p>
                 </div>
                 <div class="differential">
-                    <div class="feature-icon" aria-hidden="true">✧</div>
+                    <div class="feature-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-shield-check"></use></svg></div>
                     <div class="differential-mark" aria-hidden="true">04</div>
                     <h3>Garantia e assistência</h3>
                     <p>Produtos com garantia e apoio técnico sempre que precisar.</p>
@@ -139,11 +181,11 @@
 
     <!-- Contact CTA -->
     <section class="contact-cta" aria-labelledby="contact-title">
-        <div class="contact-icon-box" aria-hidden="true">↗</div>
+        <div class="contact-icon-box" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-arrow-up-right"></use></svg></div>
         <div class="contact-content">
             <h2 id="contact-title">Tem um projeto em mente?</h2>
             <p>Contacte-nos para uma avaliação gratuita e sem compromisso do seu projeto.</p>
-            <a class="contact-button" href="#form">Pedir orçamento</a>
+            <a class="contact-button" href="#form"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-receipt"></use></svg> Pedir orçamento</a>
         </div>
     </section>
 

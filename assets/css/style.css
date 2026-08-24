@@ -1498,6 +1498,15 @@ body {
     background: var(--reference-paper);
 }
 
+/* ====== ICON LIBRARY ====== */
+.icon {
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    flex-shrink: 0;
+    vertical-align: -0.15em;
+}
+
 nav {
     height: 80px;
     background: var(--reference-paper);
@@ -1540,7 +1549,7 @@ nav .nav-links {
 
 nav .nav-links a {
     color: var(--reference-wood);
-    font-size: 0.68rem;
+    font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1558,7 +1567,7 @@ nav .cta-button {
     letter-spacing: 0.04em;
 }
 
-nav .cta-button span {
+nav .cta-button .icon {
     color: var(--reference-gold);
     font-size: 1rem;
 }
@@ -1632,10 +1641,9 @@ nav .cta-button span {
     font-size: 0.67rem;
 }
 
-.hero-cta span {
+.hero-cta .icon {
     margin-left: 1rem;
     font-size: 1.25rem;
-    line-height: 0;
 }
 
 .hero-cta:hover,
@@ -1706,10 +1714,10 @@ nav .cta-button span {
 
 .grid-item.card .product-icon {
     display: block;
+    width: 1.7rem;
+    height: 1.7rem;
     margin-bottom: 1rem;
     color: var(--reference-gold);
-    font-size: 1.7rem;
-    line-height: 1;
 }
 
 .grid-item.card h3 {
@@ -1735,14 +1743,13 @@ nav .cta-button span {
     letter-spacing: 0.08em;
 }
 
-.grid-item.card a span {
+.grid-item.card a .icon {
     margin-left: 0.75rem;
     font-size: 1.1rem;
-    display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.grid-item.card:hover a span {
+.grid-item.card:hover a .icon {
     transform: translateX(0.3rem);
 }
 
@@ -1938,11 +1945,18 @@ nav .cta-button span {
 }
 
 .contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     min-height: 42px;
     padding: 0.7rem 1rem;
     background: var(--reference-gold);
     color: var(--reference-paper);
     font-size: 0.63rem;
+}
+
+.contact-button .icon {
+    font-size: 1rem;
 }
 
 .contact-button:hover,
@@ -1997,7 +2011,7 @@ footer a {
         font-size: 0.56rem;
     }
 
-    nav .cta-button span {
+    nav .cta-button .icon {
         display: none;
     }
 
@@ -2162,7 +2176,7 @@ nav .cta-button {
     color: var(--off-white);
 }
 
-nav .cta-button span {
+nav .cta-button .icon {
     color: var(--champagne);
 }
 
@@ -2172,8 +2186,8 @@ nav .cta-button:focus-visible {
     color: var(--mahogany);
 }
 
-nav .cta-button:hover span,
-nav .cta-button:focus-visible span {
+nav .cta-button:hover .icon,
+nav .cta-button:focus-visible .icon {
     color: var(--mahogany);
 }
 

@@ -54,11 +54,11 @@ O ícone de saco no menu (topo de todas as páginas) abre uma lista dos produtos
 O site é 100% estático (sem servidor), por isso o envio de email do carrinho de orçamento e do formulário de contacto da home usa o [EmailJS](https://www.emailjs.com) — um serviço que envia o email diretamente do browser do visitante, sem precisar de backend. Isto introduz a **primeira dependência externa em runtime** do site (o SDK é carregado via CDN); todo o resto continua self-contained.
 
 **Configurar o envio de email:**
-1. Criar conta gratuita em [emailjs.com](https://www.emailjs.com) e ligar o email `geral@rbm.pt` como "Email Service".
+1. Criar conta gratuita em [emailjs.com](https://www.emailjs.com) e ligar o email `geral@rbmportas.pt` como "Email Service".
 2. Criar um "Email Template" que use as variáveis: `from_name`, `from_email`, `from_phone`, `message`, `products`.
 3. Copiar a **Public Key** (Account → General), o **Service ID** e o **Template ID** e colar em [`assets/js/email-config.js`](assets/js/email-config.js).
 
-Enquanto essas 3 chaves estiverem vazias, os formulários mostram um aviso a pedir para contactar `geral@rbm.pt` diretamente, em vez de falhar em silêncio.
+Enquanto essas 3 chaves estiverem vazias, os formulários mostram um aviso a pedir para contactar `geral@rbmportas.pt` diretamente, em vez de falhar em silêncio.
 
 ### Cookies e privacidade
 `assets/js/cookie-consent.js` injeta um banner de cookies (padrão UE: Aceitar / Rejeitar não essenciais) em todas as páginas na primeira visita, guardando a escolha em `localStorage`. `pags/privacidade.html` é um modelo genérico de política de privacidade (RGPD) — **não substitui aconselhamento jurídico**; recomenda-se revisão por um profissional antes de considerar definitivo.
@@ -78,6 +78,6 @@ Não há build nem servidor — basta abrir `index.html` num browser. Para testa
 - **2026-08-24** — Fotos e especificações reais da Portrisa (Porta de Segurança START) e Teccarsa (Janela Brillant-Design 70) a substituir 2 dos produtos placeholder, com selos de destaque (segurança/acústico/térmico/estanqueidade) usando os ícones e logótipo reais dos fabricantes.
 - **2026-08-24** — Catálogo de produtos completo: página de listagem com filtros dinâmicos, ficha de produto com galeria e tabela de especificações, barra fixa ao rolar, carrinho de orçamento (localStorage) com envio por EmailJS, banner de cookies (padrão UE) e página de política de privacidade. Nova pasta `pags/` para as páginas novas.
 - **2026-08-24** — Menu aumentado (0.68rem → 0.85rem) e biblioteca de ícones SVG (sprite `<symbol>`, baseada em Lucide) a substituir os símbolos Unicode usados como placeholder em botões, cards e diferenciais.
-- **2026-08-24** — Rebrand de "Saavedra Portas e Janelas" para "RBM - Portas e Janelas": logótipo, título, rodapé, email de contacto (`geral@rbm.pt`) e repositório GitHub renomeado para `rbm-portas-e-janelas`.
+- **2026-08-24** — Rebrand de "Saavedra Portas e Janelas" para "RBM - Portas e Janelas": logótipo, título, rodapé, email de contacto (`geral@rbmportas.pt`) e repositório GitHub renomeado para `rbm-portas-e-janelas`.
 - **2026-08-24** — Ajuste do grid de produtos da home: cards "Portas"/"Janelas" alinhados em altura com as imagens ao lado, hover animado nos cards e zoom nas imagens ao passar o rato.
 - **2026-08-20** — Ajustes de estilo ao logótipo e menu (destaque dourado, largura, aproximação ao modelo de marca).

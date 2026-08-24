@@ -202,7 +202,7 @@
             .join("\n");
 
         if (typeof isEmailConfigured !== "function" || !isEmailConfigured() || typeof emailjs === "undefined") {
-            statusEl.textContent = "O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbm.pt com os produtos escolhidos.";
+            statusEl.textContent = "O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbmportas.pt com os produtos escolhidos.";
             statusEl.className = "cart-form-status error";
             return;
         }
@@ -229,7 +229,7 @@
                 form.reset();
             })
             .catch(() => {
-                statusEl.textContent = "Não foi possível enviar o pedido. Tente novamente ou contacte-nos para geral@rbm.pt.";
+                statusEl.textContent = "Não foi possível enviar o pedido. Tente novamente ou contacte-nos para geral@rbmportas.pt.";
                 statusEl.className = "cart-form-status error";
             })
             .finally(() => {

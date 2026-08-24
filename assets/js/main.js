@@ -19,7 +19,7 @@ if (contactForm) {
         formStatus.classList.remove('success', 'error');
 
         if (typeof isEmailConfigured !== 'function' || !isEmailConfigured() || typeof emailjs === 'undefined') {
-            formStatus.textContent = 'O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbm.pt.';
+            formStatus.textContent = 'O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbmportas.pt.';
             formStatus.classList.add('error');
             return;
         }
@@ -46,7 +46,7 @@ if (contactForm) {
                 }, 5000);
             })
             .catch((error) => {
-                formStatus.textContent = 'Erro ao enviar. Tente novamente ou contacte-nos para geral@rbm.pt.';
+                formStatus.textContent = 'Erro ao enviar. Tente novamente ou contacte-nos para geral@rbmportas.pt.';
                 formStatus.classList.add('error');
                 console.error('Error:', error);
             })

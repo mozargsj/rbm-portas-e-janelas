@@ -1596,6 +1596,8 @@ nav .cta-button .icon {
 .hero {
     min-height: 0;
     height: min(610px, calc(100dvh - 80px));
+    max-width: 1200px;
+    margin: 0 auto;
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
 }
 
@@ -1686,7 +1688,6 @@ nav .cta-button .icon {
 }
 
 .products-section .container {
-    max-width: none;
     padding: 0;
 }
 

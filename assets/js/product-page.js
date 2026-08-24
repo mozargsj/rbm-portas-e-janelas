@@ -24,7 +24,24 @@
             main.appendChild(slide);
         });
 
+        const zoomBtn = document.createElement("button");
+        zoomBtn.type = "button";
+        zoomBtn.className = "gallery-zoom-button";
+        zoomBtn.setAttribute("aria-label", "Ver imagem em ecrã inteiro");
+        zoomBtn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-maximize"></use></svg>';
+        main.appendChild(zoomBtn);
+
         wrapper.appendChild(main);
+
+        let current = 0;
+        const slides = main.querySelectorAll(".gallery-slide");
+        let thumbEls = null;
+
+        function goTo(index) {
+            current = (index + images.length) % images.length;
+            slides.forEach((slide, i) => slide.classList.toggle("is-active", i === current));
+            if (thumbEls) thumbEls.forEach((thumb, i) => thumb.classList.toggle("is-active", i === current));
+        }
 
         if (images.length > 1) {
             const prev = document.createElement("button");
@@ -50,15 +67,7 @@
                 thumbs.appendChild(thumb);
             });
 
-            let current = 0;
-            const slides = main.querySelectorAll(".gallery-slide");
-            const thumbEls = thumbs.querySelectorAll(".gallery-thumb");
-
-            function goTo(index) {
-                current = (index + images.length) % images.length;
-                slides.forEach((slide, i) => slide.classList.toggle("is-active", i === current));
-                thumbEls.forEach((thumb, i) => thumb.classList.toggle("is-active", i === current));
-            }
+            thumbEls = thumbs.querySelectorAll(".gallery-thumb");
 
             prev.addEventListener("click", () => goTo(current - 1));
             next.addEventListener("click", () => goTo(current + 1));
@@ -69,7 +78,85 @@
             wrapper.appendChild(thumbs);
         }
 
+        slides.forEach((slide, index) => {
+            slide.addEventListener("click", () => openLightbox(images, altText, index, goTo));
+        });
+        zoomBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openLightbox(images, altText, current, goTo);
+        });
+
         return wrapper;
+    }
+
+    /* ====== LIGHTBOX (visualização em ecrã inteiro, com navegação) ====== */
+    let lightboxOverlay = null;
+    let lightboxState = null;
+
+    function ensureLightbox() {
+        if (lightboxOverlay) return lightboxOverlay;
+
+        const overlay = document.createElement("div");
+        overlay.className = "lightbox-overlay";
+        overlay.innerHTML =
+            '<button type="button" class="lightbox-close" aria-label="Fechar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-x"></use></svg></button>' +
+            '<button type="button" class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chevron-left"></use></svg></button>' +
+            '<div class="lightbox-figure"><img class="lightbox-image" alt=""><span class="lightbox-counter"></span></div>' +
+            '<button type="button" class="lightbox-arrow lightbox-next" aria-label="Imagem seguinte"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chevron-right"></use></svg></button>';
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) closeLightbox();
+        });
+        overlay.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+        overlay.querySelector(".lightbox-prev").addEventListener("click", () => navigateLightbox(-1));
+        overlay.querySelector(".lightbox-next").addEventListener("click", () => navigateLightbox(1));
+
+        document.addEventListener("keydown", (e) => {
+            if (!overlay.classList.contains("is-open")) return;
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowLeft") navigateLightbox(-1);
+            if (e.key === "ArrowRight") navigateLightbox(1);
+        });
+
+        lightboxOverlay = overlay;
+        return overlay;
+    }
+
+    function renderLightboxImage() {
+        const overlay = lightboxOverlay;
+        const { images, altText, index } = lightboxState;
+        const img = overlay.querySelector(".lightbox-image");
+        img.src = resolveAssetPath(images[index]);
+        img.alt = altText + " - imagem " + (index + 1);
+
+        const counter = overlay.querySelector(".lightbox-counter");
+        counter.textContent = images.length > 1 ? (index + 1) + " / " + images.length : "";
+
+        const showArrows = images.length > 1;
+        overlay.querySelector(".lightbox-prev").hidden = !showArrows;
+        overlay.querySelector(".lightbox-next").hidden = !showArrows;
+    }
+
+    function navigateLightbox(delta) {
+        if (!lightboxState) return;
+        const total = lightboxState.images.length;
+        lightboxState.index = (lightboxState.index + delta + total) % total;
+        renderLightboxImage();
+        if (lightboxState.onNavigate) lightboxState.onNavigate(lightboxState.index);
+    }
+
+    function openLightbox(images, altText, startIndex, onNavigate) {
+        const overlay = ensureLightbox();
+        lightboxState = { images: images, altText: altText, index: startIndex, onNavigate: onNavigate };
+        renderLightboxImage();
+        overlay.classList.add("is-open");
+        document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+        if (lightboxOverlay) lightboxOverlay.classList.remove("is-open");
+        document.body.classList.remove("lightbox-open");
     }
 
     function renderNotFound() {

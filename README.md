@@ -11,6 +11,7 @@ index.html                    # Página inicial (tem de ficar na raiz — é o q
 pags/
     produtos.html              # Catálogo de produtos (filtros + grid)
     produto.html                # Ficha de detalhe de 1 produto (?id=<slug>)
+    sobre.html                   # Sobre nós (história, equipa, diferenciais)
     privacidade.html            # Política de privacidade (RGPD)
 assets/
     css/
@@ -40,9 +41,10 @@ O `index.html` tem de ficar na raiz do repositório porque é isso que o GitHub 
 ### Catálogo de produtos: fonte única de dados
 Todos os produtos vêm de um único array, `PRODUCTS`, em [`assets/js/products-data.js`](assets/js/products-data.js). **Para adicionar um produto novo, basta acrescentar um objeto a este array** — nome, categoria, material, dimensões, sentido de abertura, imagens, descrição e uma tabela de especificações. Não é preciso mexer em mais nenhum ficheiro:
 - Os filtros da página de catálogo (categoria, material, sentido de abertura) são **gerados automaticamente** a partir dos valores usados no array — por isso "aprendem" sozinhos à medida que o catálogo cresce.
-- A **Porta de Segurança START (Portrisa)** e a **Janela PVC Brillant-Design 70 (Teccarsa)** já usam fotos e especificações técnicas reais dos fabricantes (extraídas das fichas técnicas fornecidas). Os restantes produtos ainda usam fotos de stock (Unsplash) como placeholder — substituir por fotos reais assim que existirem.
+- A **Porta de Segurança START** (3 produtos, um por cor — castanho, carvalho, cinzento, cada um com 1 imagem real) e a **Janela PVC Oscilobatente Brillant-Design 70** já usam especificações técnicas reais (extraídas de fichas técnicas). Não é mostrado o nome do fabricante em nenhum destes produtos (por decisão do cliente). Os restantes produtos ainda usam fotos de stock (Unsplash) como placeholder — substituir por fotos reais assim que existirem.
 - `imagens` aceita tanto caminhos locais (`assets/images/products/...`) como URLs completos. Usar sempre `resolveAssetPath(caminho)` (definida em `products-data.js`) ao apresentar uma imagem — resolve automaticamente o `../` necessário nas páginas dentro de `pags/`.
-- `destaques` (opcional): lista de selos com ícone + texto, mostrados na ficha de produto (ex. os selos reais de segurança/acústico/térmico/estanqueidade da Portrisa/Teccarsa em `assets/images/badges/`).
+- `destaques` (opcional): lista de selos com ícone + texto, mostrados na ficha de produto (ex. os selos reais de segurança/acústico/térmico/estanqueidade em `assets/images/badges/`).
+- `abertura`: nas janelas, usar sempre "Oscilobatente" ou "Corredeira" (os dois sentidos de abertura padronizados no catálogo); nas portas, "Direita" ou "Esquerda".
 
 ### Sem preços em lado nenhum
 Por decisão do cliente, nem os cards do catálogo nem a ficha de produto mostram preços — o negócio funciona por orçamento (cada porta/janela é feita por medida), não por venda a preço fixo de catálogo.
@@ -74,6 +76,7 @@ Não há build nem servidor — basta abrir `index.html` num browser. Para testa
 
 > Sempre que uma funcionalidade nova for adicionada ao site, acrescentar uma entrada aqui (data + resumo). Isto mantém o histórico de decisões visível sem ter de vasculhar o `git log`.
 
+- **2026-08-24** — Ficha de produto: imagens abrem em lightbox de ecrã inteiro com navegação entre fotos (setas, miniaturas, teclado, clique fora fecha). Porta de Segurança START dividida em 3 produtos (um por cor/imagem), com o nome do fabricante removido do título e da ficha e novos campos de especificação (acabamento interior, acabamento exterior, cor do aro). Janelas passam a usar "Oscilobatente" ou "Corredeira" como sentido de abertura padrão. Ícones de destaque (segurança/acústico/térmico) aumentados. Carrinho de orçamento ganha botões +/- para ajustar a quantidade de cada produto sem sair do carrinho.
 - **2026-08-24** — Card do catálogo passa a ser clicável por inteiro (antes só o link "Ver Detalhes" navegava para a ficha do produto).
 - **2026-08-24** — Fotos e especificações reais da Portrisa (Porta de Segurança START) e Teccarsa (Janela Brillant-Design 70) a substituir 2 dos produtos placeholder, com selos de destaque (segurança/acústico/térmico/estanqueidade) usando os ícones e logótipo reais dos fabricantes.
 - **2026-08-24** — Catálogo de produtos completo: página de listagem com filtros dinâmicos, ficha de produto com galeria e tabela de especificações, barra fixa ao rolar, carrinho de orçamento (localStorage) com envio por EmailJS, banner de cookies (padrão UE) e página de política de privacidade. Nova pasta `pags/` para as páginas novas.

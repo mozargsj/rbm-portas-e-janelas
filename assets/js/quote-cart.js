@@ -50,6 +50,15 @@
         renderDrawerItems();
     }
 
+    function changeQty(productId, delta) {
+        const cart = getCart();
+        const item = cart.find((i) => i.id === productId);
+        if (!item) return;
+        item.qty = Math.max(1, item.qty + delta);
+        persistCart(cart);
+        renderDrawerItems();
+    }
+
     function updateBadge() {
         const badge = document.querySelector(".cart-trigger .cart-count");
         if (!badge) return;
@@ -161,7 +170,12 @@
                 '<img class="cart-item-image" src="' + resolveAssetPath(product.imagens[0]) + '" alt="">' +
                 '<div class="cart-item-info">' +
                 '<a href="' + productHrefPrefix + product.id + '">' + product.nome + "</a>" +
-                "<span>" + product.dimensoes + " &middot; " + product.abertura + (item.qty > 1 ? " &middot; Qtd. " + item.qty : "") + "</span>" +
+                "<span>" + product.dimensoes + " &middot; " + product.abertura + "</span>" +
+                '<div class="cart-item-qty">' +
+                '<button type="button" class="qty-btn qty-decrease" data-id="' + product.id + '" aria-label="Diminuir quantidade"' + (item.qty <= 1 ? " disabled" : "") + ">&minus;</button>" +
+                '<span class="qty-value">' + item.qty + "</span>" +
+                '<button type="button" class="qty-btn qty-increase" data-id="' + product.id + '" aria-label="Aumentar quantidade">+</button>' +
+                "</div>" +
                 "</div>" +
                 '<button type="button" class="cart-item-remove" data-id="' + product.id + '" aria-label="Remover produto">' +
                 '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-trash-2"></use></svg>' +
@@ -171,6 +185,12 @@
 
         list.querySelectorAll(".cart-item-remove").forEach((btn) => {
             btn.addEventListener("click", () => removeFromCart(btn.getAttribute("data-id")));
+        });
+        list.querySelectorAll(".qty-decrease").forEach((btn) => {
+            btn.addEventListener("click", () => changeQty(btn.getAttribute("data-id"), -1));
+        });
+        list.querySelectorAll(".qty-increase").forEach((btn) => {
+            btn.addEventListener("click", () => changeQty(btn.getAttribute("data-id"), 1));
         });
     }
 

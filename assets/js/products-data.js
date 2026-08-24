@@ -6,11 +6,11 @@
  * abertura) são gerados automaticamente a partir dos valores usados
  * aqui, por isso não é preciso mexer em mais nenhum ficheiro.
  *
- * Imagens: a "Porta de Segurança START" e a janela PVC usam fotos e
- * especificações reais dos fabricantes (Portrisa e Teccarsa, ver
- * "destaques"). Os restantes produtos ainda usam fotos de stock
- * (Unsplash) como placeholder — substituir por fotos reais assim que
- * existirem.
+ * Imagens: a "Porta de Segurança START" (3 variantes de cor, uma por
+ * produto) e as janelas em PVC/alumínio usam especificações técnicas
+ * reais (ver "destaques"). Os restantes produtos ainda usam fotos de
+ * stock (Unsplash) como placeholder — substituir por fotos reais assim
+ * que existirem.
  *
  * `imagens`: caminhos relativos à raiz do site (ex. "assets/images/...")
  * ou URLs completos (https://...). Usar sempre resolveAssetPath(caminho)
@@ -71,20 +71,17 @@ const PRODUCTS = [
         ]
     },
     {
-        id: "porta-seguranca-start-portrisa",
+        id: "porta-seguranca-start-castanho",
         categoria: "portas",
         material: "Aço",
-        nome: "Porta de Segurança START (Portrisa)",
+        nome: "Porta de Segurança START — Castanho",
         dimensoes: "90 x 210 cm",
         abertura: "Direita",
         imagens: [
-            "assets/images/products/porta-seguranca-start-castanho.jpg",
-            "assets/images/products/porta-seguranca-start-carvalho.jpg",
-            "assets/images/products/porta-seguranca-start-cinza.jpg"
+            "assets/images/products/porta-seguranca-start-castanho.jpg"
         ],
-        descricao: "Porta de segurança da gama START, fabricada pela Portrisa a partir de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Disponível em várias cores e acabamentos (castanho, carvalho, cinzento, entre outros).",
+        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em castanho, para quem procura robustez sem abdicar de um aspeto tradicional.",
         especificacoes: [
-            { label: "Fabricante", valor: "Portrisa" },
             { label: "Categoria", valor: "Porta de segurança" },
             { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
             { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
@@ -94,7 +91,71 @@ const PRODUCTS = [
             { label: "Atenuação acústica", valor: "28 dB (opção reforçada: 41 dB)" },
             { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
             { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
-            { label: "Cores disponíveis", valor: "Castanho, Cinzento, Branco (opção: aço inox e cores RAL)" }
+            { label: "Acabamento exterior", valor: "Castanho (folha decorativa amadeirada)" },
+            { label: "Acabamento interior", valor: "Branco liso" },
+            { label: "Cor do aro", valor: "Castanho" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
+            { icone: "assets/images/badges/termico.png", label: "Térmico até 1,6 W/(m²K)" }
+        ]
+    },
+    {
+        id: "porta-seguranca-start-carvalho",
+        categoria: "portas",
+        material: "Aço",
+        nome: "Porta de Segurança START — Carvalho",
+        dimensoes: "90 x 210 cm",
+        abertura: "Direita",
+        imagens: [
+            "assets/images/products/porta-seguranca-start-carvalho.jpg"
+        ],
+        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em carvalho, para quem procura robustez sem abdicar de um aspeto tradicional.",
+        especificacoes: [
+            { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
+            { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
+            { label: "Sentido de abertura", valor: "Direita ou Esquerda, à escolha" },
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), segundo EN 1627:2011" },
+            { label: "Pontos de fecho", valor: "12 (gama Start) ou 14 (opção gama Max)" },
+            { label: "Atenuação acústica", valor: "28 dB (opção reforçada: 41 dB)" },
+            { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
+            { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
+            { label: "Acabamento exterior", valor: "Carvalho (folha decorativa amadeirada)" },
+            { label: "Acabamento interior", valor: "Branco liso" },
+            { label: "Cor do aro", valor: "Carvalho" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
+            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica até 41 dB" },
+            { icone: "assets/images/badges/termico.png", label: "Térmico até 1,6 W/(m²K)" }
+        ]
+    },
+    {
+        id: "porta-seguranca-start-cinza",
+        categoria: "portas",
+        material: "Aço",
+        nome: "Porta de Segurança START — Cinzento",
+        dimensoes: "90 x 210 cm",
+        abertura: "Direita",
+        imagens: [
+            "assets/images/products/porta-seguranca-start-cinza.jpg"
+        ],
+        descricao: "Porta de segurança da gama START, resultado de mais de 20 anos de investigação em portas anti-arrombamento. Estrutura em aço eletrozincado reforçada com ómegas verticais, especialmente fortalecida na zona da fechadura, dobradiças e pontos de fecho — sem comprometer o acabamento. Acabamento exterior em cinzento, para um aspeto contemporâneo.",
+        especificacoes: [
+            { label: "Categoria", valor: "Porta de segurança" },
+            { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
+            { label: "Dimensões (passagem livre)", valor: "800–900 x 2000–2100 mm (sob medida até 1100 x 2400 mm)" },
+            { label: "Sentido de abertura", valor: "Direita ou Esquerda, à escolha" },
+            { label: "Classe de segurança", valor: "Nível 3 (RC3), segundo EN 1627:2011" },
+            { label: "Pontos de fecho", valor: "12 (gama Start) ou 14 (opção gama Max)" },
+            { label: "Atenuação acústica", valor: "28 dB (opção reforçada: 41 dB)" },
+            { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
+            { label: "Fechadura", valor: "Cilindro europeu de alta segurança, 1 chave de obra + 5 chaves definitivas" },
+            { label: "Acabamento exterior", valor: "Cinzento liso" },
+            { label: "Acabamento interior", valor: "Branco liso" },
+            { label: "Cor do aro", valor: "Cinzento" }
         ],
         destaques: [
             { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
@@ -106,20 +167,19 @@ const PRODUCTS = [
         id: "janela-pvc-oscilobatente",
         categoria: "janelas",
         material: "PVC",
-        nome: "Janela PVC Oscilobatente Brillant-Design 70 (Teccarsa)",
+        nome: "Janela PVC Oscilobatente Brillant-Design 70",
         dimensoes: "120 x 120 cm",
-        abertura: "Basculante",
+        abertura: "Oscilobatente",
         imagens: [
             "https://plus.unsplash.com/premium_photo-1677521321903-6d2bdd279267?q=88&w=1200&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
         ],
-        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 da Teccarsa — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões.",
+        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões.",
         especificacoes: [
-            { label: "Fabricante", valor: "Teccarsa (sistema Brillant-Design 70)" },
             { label: "Categoria", valor: "Janela" },
             { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
             { label: "Dimensões", valor: "120 x 120 cm (máximo de fabrico: 200 x 240 cm)" },
-            { label: "Sentido de abertura", valor: "Basculante (oscilobatente)" },
+            { label: "Sentido de abertura", valor: "Oscilobatente" },
             { label: "Vidro", valor: "Duplo, baixo emissivo (até 41 mm de espessura)" },
             { label: "Isolamento térmico", valor: "Uw = 0,95 W/(m²K)" },
             { label: "Isolamento acústico", valor: "Até 45 dB" },
@@ -139,7 +199,7 @@ const PRODUCTS = [
         material: "Alumínio",
         nome: "Janela de Correr em Alumínio",
         dimensoes: "150 x 120 cm",
-        abertura: "Correr",
+        abertura: "Corredeira",
         imagens: [
             "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85",
             "https://plus.unsplash.com/premium_photo-1687960116947-11ecc22f45c0?q=88&w=1800&auto=format&fit=crop"
@@ -149,7 +209,7 @@ const PRODUCTS = [
             { label: "Categoria", valor: "Janela" },
             { label: "Material", valor: "Alumínio com corte térmico" },
             { label: "Dimensões", valor: "150 x 120 cm" },
-            { label: "Sentido de abertura", valor: "Correr" },
+            { label: "Sentido de abertura", valor: "Corredeira" },
             { label: "Vidro", valor: "Duplo" },
             { label: "Isolamento térmico", valor: "Standard" },
             { label: "Cor", valor: "Cinza antracite" }
@@ -161,7 +221,7 @@ const PRODUCTS = [
         material: "Madeira",
         nome: "Janela Clássica em Madeira",
         dimensoes: "100 x 130 cm",
-        abertura: "Esquerda",
+        abertura: "Oscilobatente",
         imagens: [
             "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85",
             "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
@@ -171,7 +231,7 @@ const PRODUCTS = [
             { label: "Categoria", valor: "Janela" },
             { label: "Material", valor: "Madeira" },
             { label: "Dimensões", valor: "100 x 130 cm" },
-            { label: "Sentido de abertura", valor: "Esquerda" },
+            { label: "Sentido de abertura", valor: "Oscilobatente" },
             { label: "Vidro", valor: "Duplo" },
             { label: "Isolamento térmico", valor: "Standard" },
             { label: "Cor", valor: "Carvalho natural" }

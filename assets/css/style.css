@@ -1168,8 +1168,17 @@ nav .cta-button {
     padding: 1.5rem 1.5rem 1.5rem 0;
     border: 0;
     border-right: 1px solid var(--border);
-    border-radius: 0;
+    border-radius: 8px;
     background: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.process-step:hover {
+    position: relative;
+    z-index: 1;
+    transform: translateY(-6px);
+    background-color: #fff;
+    box-shadow: 0 1.25rem 2.25rem rgba(50, 27, 17, 0.12);
 }
 
 .process-step + .process-step {
@@ -1188,6 +1197,11 @@ nav .cta-button {
     color: var(--champagne);
     line-height: 1;
     font-size: 0.75rem;
+    transition: transform 0.35s ease;
+}
+
+.process-step:hover .process-step-num {
+    transform: translateY(-3px) scale(1.1);
 }
 
 .process-step h3 {
@@ -1706,16 +1720,23 @@ nav .cta-button .icon {
     padding: 2rem clamp(1.25rem, 3vw, 3rem);
     border-top: 0;
     background-color: var(--reference-wood);
-    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("https://plus.unsplash.com/premium_photo-1680120254458-369c37689b47?q=85&w=800&auto=format&fit=crop");
     background-position: center;
     background-size: cover;
     color: var(--reference-paper);
 }
 
+.grid-item.card-portas {
+    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("https://images.unsplash.com/photo-1613544723301-176686aa9f09?q=85&w=800&auto=format&fit=crop");
+}
+
+.grid-item.card-janelas {
+    background-image: linear-gradient(90deg, rgba(50, 27, 17, 0.92), rgba(50, 27, 17, 0.86)), url("https://images.unsplash.com/photo-1616843221271-a3447ca74df3?q=85&w=800&auto=format&fit=crop");
+}
+
 .grid-item.card .product-icon {
     display: block;
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2.6rem;
+    height: 2.6rem;
     margin-bottom: 1rem;
     color: var(--reference-gold);
 }
@@ -1831,6 +1852,16 @@ nav .cta-button .icon {
     border-top: 0;
     border-right: 1px solid var(--reference-line);
     text-align: center;
+    border-radius: 8px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.differential:hover {
+    position: relative;
+    z-index: 1;
+    transform: translateY(-6px);
+    background-color: #fff;
+    box-shadow: 0 1.25rem 2.25rem rgba(50, 27, 17, 0.14);
 }
 
 .differential:first-child {
@@ -1849,6 +1880,11 @@ nav .cta-button .icon {
     color: var(--reference-gold);
     font-size: 2.15rem;
     line-height: 1;
+    transition: transform 0.35s ease;
+}
+
+.differential:hover .feature-icon {
+    transform: translateY(-3px) scale(1.08);
 }
 
 .differential-mark {
@@ -1876,10 +1912,7 @@ nav .cta-button .icon {
 
 .suppliers {
     padding: 1rem 0;
-    background-color: var(--reference-wood);
-    background-image: linear-gradient(90deg, rgba(35, 17, 10, 0.44), rgba(74, 41, 27, 0.08)), url("https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=75");
-    background-position: center;
-    background-size: cover;
+    background-color: var(--mahogany);
 }
 
 .suppliers .container {
@@ -1889,7 +1922,7 @@ nav .cta-button .icon {
 
 .suppliers h3 {
     margin-bottom: 0.4rem;
-    color: var(--reference-gold);
+    color: var(--off-white);
     font-size: 0.62rem;
     letter-spacing: 0.08em;
 }
@@ -2200,4 +2233,52 @@ nav .cta-button:focus-visible .icon {
         margin-top: 0.35rem;
         font-size: 0.4rem;
     }
+}
+
+/* ====== MOTION: SCROLL REVEAL ====== */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ====== MOTION: BUTTON PHYSICS ====== */
+nav .cta-button,
+.hero-cta,
+.contact-button {
+    transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+        color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav .cta-button:active,
+.contact-button:active {
+    transform: scale(0.96);
+}
+
+nav .cta-button .icon,
+.hero-cta .icon,
+.contact-button .icon {
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav .cta-button:hover .icon,
+nav .cta-button:focus-visible .icon,
+.hero-cta:hover .icon,
+.hero-cta:focus-visible .icon,
+.contact-button:hover .icon,
+.contact-button:focus-visible .icon {
+    transform: translateX(4px);
 }

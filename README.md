@@ -22,14 +22,16 @@ assets/
         products-data.js           # Fonte única dos produtos do catálogo (array PRODUCTS)
         catalog.js                  # Filtros + grid da página de catálogo
         product-page.js              # Ficha de produto + barra fixa ao rolar
-        quote-cart.js                 # Carrinho de orçamento (localStorage) + envio por EmailJS
+        quote-cart.js                 # Carrinho de orçamento (localStorage) + envio via Worker
         cookie-consent.js              # Banner de cookies (padrão UE)
-        email-config.js                # Chaves do EmailJS (preencher — ver secção abaixo)
+        worker-config.js               # URL do Worker de contacto (preencher — ver secção abaixo)
     images/
         products/                    # Fotos reais de produtos (fornecidas pelos fabricantes)
         hero/                         # Fotos usadas nos fundos da home (hero + grid de produtos)
         brands/                      # Logótipos reais de fornecedores (ex. Portrisa)
         badges/                      # Ícones de características reais (segurança/acústico/térmico/estanqueidade)
+cloudflare/
+    rbm-contact-worker/            # Worker (Node.js/Wrangler) que envia os emails via Resend
 ```
 
 Não existe sistema de templates/includes (o projeto não usa build tools de propósito). Por isso a `<nav>`, o rodapé e o sprite de ícones SVG estão duplicados em `index.html` e em cada página de `pags/`. Ao editar um destes blocos (ex.: adicionar um link ao menu), replicar a alteração manualmente nas outras páginas.
@@ -54,15 +56,14 @@ Por decisão do cliente, nem os cards do catálogo nem a ficha de produto mostra
 ### Carrinho de orçamento — não é uma loja
 O ícone de saco no menu (topo de todas as páginas) abre uma lista dos produtos que o visitante marcou como "Adicionar ao Orçamento". Não há checkout nem pagamento — o botão final ("Solicitar Proposta") só recolhe nome/email/telefone/mensagem e envia tudo por email. Estado guardado em `localStorage`, por isso o carrinho persiste ao navegar entre páginas mas é local a cada browser/dispositivo.
 
-### Envio de email: EmailJS
-O site é 100% estático (sem servidor), por isso o envio de email do carrinho de orçamento e do formulário de contacto da home usa o [EmailJS](https://www.emailjs.com) — um serviço que envia o email diretamente do browser do visitante, sem precisar de backend. Isto introduz a **primeira dependência externa em runtime** do site (o SDK é carregado via CDN); todo o resto continua self-contained.
+### Envio de email: Cloudflare Worker + Resend
+O site é 100% estático (sem servidor), por isso o formulário de contacto da home e o carrinho de orçamento enviam os dados via `fetch` para um Cloudflare Worker próprio ([`cloudflare/rbm-contact-worker/`](cloudflare/rbm-contact-worker/)), que usa a API do [Resend](https://resend.com) para: (1) enviar os dados do pedido para `rbmportasejanelas@gmail.com` com `reply_to` do cliente, e (2) enviar um email de confirmação automático para o próprio cliente. A API key do Resend fica só no Worker (nunca no código do site).
 
-**Configurar o envio de email:**
-1. Criar conta gratuita em [emailjs.com](https://www.emailjs.com) e ligar o email `geral@rbmportas.pt` como "Email Service".
-2. Criar um "Email Template" que use as variáveis: `from_name`, `from_email`, `from_phone`, `message`, `products`.
-3. Copiar a **Public Key** (Account → General), o **Service ID** e o **Template ID** e colar em [`assets/js/email-config.js`](assets/js/email-config.js).
+**Configurar:**
+1. Em [`assets/js/worker-config.js`](assets/js/worker-config.js), colar o URL do Worker publicado em `ENDPOINT_URL` (ex.: `https://rbm-contact-worker.<subdominio>.workers.dev`).
+2. Ver [`cloudflare/rbm-contact-worker/`](cloudflare/rbm-contact-worker/) para instruções de deploy/segredo.
 
-Enquanto essas 3 chaves estiverem vazias, os formulários mostram um aviso a pedir para contactar `geral@rbmportas.pt` diretamente, em vez de falhar em silêncio.
+Enquanto `ENDPOINT_URL` estiver vazio, os formulários mostram um aviso a pedir para contactar `geral@rbmportas.pt` diretamente, em vez de falhar em silêncio.
 
 ### Cookies e privacidade
 `assets/js/cookie-consent.js` injeta um banner de cookies (padrão UE: Aceitar / Rejeitar não essenciais) em todas as páginas na primeira visita, guardando a escolha em `localStorage`. `pags/privacidade.html` é um modelo genérico de política de privacidade (RGPD) — **não substitui aconselhamento jurídico**; recomenda-se revisão por um profissional antes de considerar definitivo.

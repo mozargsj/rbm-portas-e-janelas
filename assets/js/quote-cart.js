@@ -3,9 +3,8 @@
  * que o cliente quer incluir no pedido de proposta. Estado guardado em
  * localStorage, partilhado entre todas as páginas do site.
  *
- * Depende de PRODUCTS (products-data.js) e EMAIL_CONFIG (email-config.js)
- * já carregados antes deste script, e do SDK global `emailjs` (via CDN)
- * para o envio efetivo do email.
+ * Depende de PRODUCTS (products-data.js) e WORKER_CONFIG (worker-config.js)
+ * já carregados antes deste script, para o envio via Cloudflare Worker.
  */
 (function () {
     const STORAGE_KEY = "rbm-quote-cart";
@@ -212,16 +211,15 @@
             return;
         }
 
-        const productsList = cart
+        const products = cart
             .map((item) => {
                 const p = (typeof PRODUCTS !== "undefined" ? PRODUCTS : []).find((prod) => prod.id === item.id);
                 if (!p) return null;
-                return "- " + p.nome + " (" + p.dimensoes + ", abertura " + p.abertura + ")" + (item.qty > 1 ? " x" + item.qty : "");
+                return p.nome + " (" + p.dimensoes + ", abertura " + p.abertura + ")" + (item.qty > 1 ? " x" + item.qty : "");
             })
-            .filter(Boolean)
-            .join("\n");
+            .filter(Boolean);
 
-        if (typeof isEmailConfigured !== "function" || !isEmailConfigured() || typeof emailjs === "undefined") {
+        if (typeof isWorkerConfigured !== "function" || !isWorkerConfigured()) {
             statusEl.textContent = "O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbmportas.pt com os produtos escolhidos.";
             statusEl.className = "cart-form-status error";
             return;
@@ -233,15 +231,14 @@
         statusEl.textContent = "";
         statusEl.className = "cart-form-status";
 
-        emailjs
-            .send(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, {
-                from_name: name,
-                from_email: email,
-                from_phone: phone || "Não indicado",
-                message: message || "Sem mensagem adicional.",
-                products: productsList
-            })
-            .then(() => {
+        fetch(WORKER_CONFIG.ENDPOINT_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone, message, products })
+        })
+            .then((res) => res.json().then((body) => ({ ok: res.ok, body })))
+            .then(({ ok, body }) => {
+                if (!ok || !body.success) throw new Error(body.error || "Falha no envio");
                 statusEl.textContent = "Pedido enviado com sucesso! Entraremos em contacto em breve.";
                 statusEl.className = "cart-form-status success";
                 persistCart([]);
@@ -280,10 +277,6 @@
         document.addEventListener("DOMContentLoaded", init);
     } else {
         init();
-    }
-
-    if (typeof isEmailConfigured === "function" && isEmailConfigured() && typeof emailjs !== "undefined") {
-        emailjs.init({ publicKey: EMAIL_CONFIG.PUBLIC_KEY });
     }
 
     window.RBMQuoteCart = { add: addToCart, openDrawer: openDrawer };

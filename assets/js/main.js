@@ -9,16 +9,16 @@ if (contactForm) {
         const formData = new FormData(contactForm);
         const data = {
             name: formData.get('name'),
+            email: formData.get('email'),
             phone: formData.get('phone'),
             product: formData.get('product'),
-            message: formData.get('message'),
-            timestamp: new Date().toISOString()
+            message: formData.get('message')
         };
 
         formStatus.textContent = '';
         formStatus.classList.remove('success', 'error');
 
-        if (typeof isEmailConfigured !== 'function' || !isEmailConfigured() || typeof emailjs === 'undefined') {
+        if (typeof isWorkerConfigured !== 'function' || !isWorkerConfigured()) {
             formStatus.textContent = 'O envio automático de email ainda não está configurado. Contacte-nos diretamente para geral@rbmportas.pt.';
             formStatus.classList.add('error');
             return;
@@ -27,16 +27,14 @@ if (contactForm) {
         const submitButton = contactForm.querySelector('.submit-button');
         if (submitButton) submitButton.disabled = true;
 
-        const productLabels = { door: 'Porta Blindada', window: 'Janela PVC', both: 'Ambos' };
-
-        emailjs
-            .send(EMAIL_CONFIG.SERVICE_ID, EMAIL_CONFIG.TEMPLATE_ID, {
-                from_name: data.name,
-                from_phone: data.phone,
-                message: 'Tipo de produto: ' + (productLabels[data.product] || data.product) + '\n\n' + data.message,
-                products: '(pedido geral via formulário de contacto, sem produtos específicos do catálogo)'
-            })
-            .then(() => {
+        fetch(WORKER_CONFIG.ENDPOINT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then((res) => res.json().then((body) => ({ ok: res.ok, body })))
+            .then(({ ok, body }) => {
+                if (!ok || !body.success) throw new Error(body.error || 'Falha no envio');
                 formStatus.textContent = 'Obrigado! Entraremos em contacto em breve.';
                 formStatus.classList.add('success');
                 contactForm.reset();

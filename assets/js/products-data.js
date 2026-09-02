@@ -229,6 +229,96 @@ const PRODUCTS = [
         ]
     },
     {
+        id: "janela-pvc-oscilobatente-branco",
+        categoria: "janelas",
+        material: "PVC",
+        nome: "Janela PVC Oscilobatente Brillant-Design 70 — Branco",
+        dimensoes: "120 x 120 cm",
+        abertura: "Oscilobatente",
+        imagens: [
+            "assets/images/products/janela-pvc-oscilobatente-branco.png"
+        ],
+        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões. Acabamento em branco, em ambas as faces.",
+        especificacoes: [
+            { label: "Categoria", valor: "Janela" },
+            { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
+            { label: "Dimensões", valor: "120 x 120 cm (máximo de fabrico: 200 x 240 cm)" },
+            { label: "Sentido de abertura", valor: "Oscilobatente" },
+            { label: "Vidro", valor: "Duplo, baixo emissivo (até 41 mm de espessura)" },
+            { label: "Isolamento térmico", valor: "Uw = 0,95 W/(m²K)" },
+            { label: "Isolamento acústico", valor: "Até 45 dB" },
+            { label: "Estanqueidade à água", valor: "Até classe 4 (EN 1027)" },
+            { label: "Resistência ao vento", valor: "Até classe C5 (EN 12211)" },
+            { label: "Acabamento interior", valor: "Branco" },
+            { label: "Acabamento exterior", valor: "Branco" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/termico.png", label: "Térmico Uw = 0,95 W/(m²K)" },
+            { icone: "assets/images/badges/acustico.png", label: "Acústico até 45 dB" },
+            { icone: "assets/images/badges/estanqueidade.png", label: "Estanqueidade até classe 4" }
+        ]
+    },
+    {
+        id: "janela-pvc-oscilobatente-castanho",
+        categoria: "janelas",
+        material: "PVC",
+        nome: "Janela PVC Oscilobatente Brillant-Design 70 — Castanho",
+        dimensoes: "120 x 120 cm",
+        abertura: "Oscilobatente",
+        imagens: [
+            "assets/images/products/janela-pvc-oscilobatente-castanho.png"
+        ],
+        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões. Acabamento em Castanho, em ambas as faces.",
+        especificacoes: [
+            { label: "Categoria", valor: "Janela" },
+            { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
+            { label: "Dimensões", valor: "120 x 120 cm (máximo de fabrico: 200 x 240 cm)" },
+            { label: "Sentido de abertura", valor: "Oscilobatente" },
+            { label: "Vidro", valor: "Duplo, baixo emissivo (até 41 mm de espessura)" },
+            { label: "Isolamento térmico", valor: "Uw = 0,95 W/(m²K)" },
+            { label: "Isolamento acústico", valor: "Até 45 dB" },
+            { label: "Estanqueidade à água", valor: "Até classe 4 (EN 1027)" },
+            { label: "Resistência ao vento", valor: "Até classe C5 (EN 12211)" },
+            { label: "Acabamento interior", valor: "Castanho" },
+            { label: "Acabamento exterior", valor: "Castanho" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/termico.png", label: "Térmico Uw = 0,95 W/(m²K)" },
+            { icone: "assets/images/badges/acustico.png", label: "Acústico até 45 dB" },
+            { icone: "assets/images/badges/estanqueidade.png", label: "Estanqueidade até classe 4" }
+        ]
+    },
+    {
+        id: "janela-pvc-oscilobatente-cinza",
+        categoria: "janelas",
+        material: "PVC",
+        nome: "Janela PVC Oscilobatente Brillant-Design 70 — Cinza Antracite",
+        dimensoes: "120 x 120 cm",
+        abertura: "Oscilobatente",
+        imagens: [
+            "assets/images/products/janela-pvc-oscilobatente-cinza.png"
+        ],
+        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões. Acabamento em Cinza Antracite, em ambas as faces.",
+        especificacoes: [
+            { label: "Categoria", valor: "Janela" },
+            { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
+            { label: "Dimensões", valor: "120 x 120 cm (máximo de fabrico: 200 x 240 cm)" },
+            { label: "Sentido de abertura", valor: "Oscilobatente" },
+            { label: "Vidro", valor: "Duplo, baixo emissivo (até 41 mm de espessura)" },
+            { label: "Isolamento térmico", valor: "Uw = 0,95 W/(m²K)" },
+            { label: "Isolamento acústico", valor: "Até 45 dB" },
+            { label: "Estanqueidade à água", valor: "Até classe 4 (EN 1027)" },
+            { label: "Resistência ao vento", valor: "Até classe C5 (EN 12211)" },
+            { label: "Acabamento interior", valor: "Cinza Antracite" },
+            { label: "Acabamento exterior", valor: "Cinza Antracite" }
+        ],
+        destaques: [
+            { icone: "assets/images/badges/termico.png", label: "Térmico Uw = 0,95 W/(m²K)" },
+            { icone: "assets/images/badges/acustico.png", label: "Acústico até 45 dB" },
+            { icone: "assets/images/badges/estanqueidade.png", label: "Estanqueidade até classe 4" }
+        ]
+    },
+    {
         id: "porta-seguranca-power-ii-nogueira",
         categoria: "portas",
         material: "Aço",

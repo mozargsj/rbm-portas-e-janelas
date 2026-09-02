@@ -67,36 +67,6 @@ const PRODUCTS = [
         ]
     },
     {
-        id: "porta-lacada-branca-pvc",
-        categoria: "portas",
-        material: "Aço",
-        nome: "Porta de Segurança EURO II Start — Branco",
-        dimensoes: "90 x 210 cm",
-        abertura: "Esquerda",
-        imagens: [
-            "https://plus.unsplash.com/premium_photo-1680120254458-369c37689b47?q=85&w=800&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85"
-        ],
-        descricao: "Porta de segurança do modelo Portrisa EURO II Start, com estrutura em aço eletrozincado reforçada e fechadura de segurança multiponto. Acabamento em painel Placor, cor Branco Portrisa, em ambas as faces — leve manutenção e aspeto limpo e contemporâneo.",
-        especificacoes: [
-            { label: "Categoria", valor: "Porta de segurança" },
-            { label: "Modelo", valor: "Portrisa EURO II Start" },
-            { label: "Material", valor: "Aço eletrozincado, reforçado com ómegas verticais" },
-            { label: "Dimensões", valor: "90 x 210 cm" },
-            { label: "Sentido de abertura", valor: "Esquerda" },
-            { label: "Classe de segurança", valor: "Nível 3 (RC3), segundo EN 1627:2011" },
-            { label: "Isolamento térmico", valor: "2,9 W/(m²K) (opção reforçada: 1,6 W/m²K)" },
-            { label: "Acabamento exterior", valor: "Placor — Branco Portrisa" },
-            { label: "Acabamento interior", valor: "Placor — Branco Portrisa" },
-            { label: "Cor do aro", valor: "Branco, Cinza Claro, Castanho ou Preto (opções padrão)" }
-        ],
-        destaques: [
-            { icone: "assets/images/badges/seguranca.png", label: "Segurança nível 3 (RC3)" },
-            { icone: "assets/images/badges/acustico.png", label: "Atenuação acústica 28 dB" },
-            { icone: "assets/images/badges/acustico.png", label: "Até 41 dB com opção reforçada" }
-        ]
-    },
-    {
         id: "porta-seguranca-start-castanho",
         categoria: "portas",
         material: "Aço",
@@ -193,56 +163,69 @@ const PRODUCTS = [
         ]
     },
     {
-        id: "janela-pvc-oscilobatente",
+        id: "janela-pvc-correr-castanho",
         categoria: "janelas",
         material: "PVC",
-        nome: "Janela PVC Oscilobatente Brillant-Design 70",
-        dimensoes: "120 x 120 cm",
-        abertura: "Oscilobatente",
-        imagens: [
-            "https://plus.unsplash.com/premium_photo-1677521321903-6d2bdd279267?q=88&w=1200&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-        ],
-        descricao: "Janela em PVC com sistema oscilobatente (abre e bascula), baseada no sistema Brillant-Design 70 — perfil de 70mm com 5 câmaras, junta dupla perimetral e reforço metálico. Excelente desempenho térmico, acústico e de estanqueidade para a generalidade das divisões. Acabamento interior branco e exterior em nogueira.",
-        especificacoes: [
-            { label: "Categoria", valor: "Janela" },
-            { label: "Material", valor: "PVC, perfil de 70 mm com 5 câmaras" },
-            { label: "Dimensões", valor: "120 x 120 cm (máximo de fabrico: 200 x 240 cm)" },
-            { label: "Sentido de abertura", valor: "Oscilobatente" },
-            { label: "Vidro", valor: "Duplo, baixo emissivo (até 41 mm de espessura)" },
-            { label: "Isolamento térmico", valor: "Uw = 0,95 W/(m²K)" },
-            { label: "Isolamento acústico", valor: "Até 45 dB" },
-            { label: "Estanqueidade à água", valor: "Até classe 4 (EN 1027)" },
-            { label: "Resistência ao vento", valor: "Até classe C5 (EN 12211)" },
-            { label: "Acabamento interior", valor: "Branco" },
-            { label: "Acabamento exterior", valor: "Nogueira" }
-        ],
-        destaques: [
-            { icone: "assets/images/badges/termico.png", label: "Térmico Uw = 0,95 W/(m²K)" },
-            { icone: "assets/images/badges/acustico.png", label: "Acústico até 45 dB" },
-            { icone: "assets/images/badges/estanqueidade.png", label: "Estanqueidade até classe 4" }
-        ]
-    },
-    {
-        id: "janela-aluminio-correr",
-        categoria: "janelas",
-        material: "Alumínio",
-        nome: "Janela de Correr em Alumínio",
+        nome: "Janela de Correr em PVC — Castanho",
         dimensoes: "150 x 120 cm",
         abertura: "Corredeira",
         imagens: [
             "assets/images/products/janela-aluminio-correr.jpg"
         ],
-        descricao: "Janela de correr em alumínio com corte térmico, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura. Acabamento interior branco e exterior em nogueira.",
+        descricao: "Janela de correr em PVC, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura. Acabamento interior branco e exterior em nogueira.",
         especificacoes: [
             { label: "Categoria", valor: "Janela" },
-            { label: "Material", valor: "Alumínio com corte térmico" },
+            { label: "Material", valor: "PVC" },
             { label: "Dimensões", valor: "150 x 120 cm" },
             { label: "Sentido de abertura", valor: "Corredeira" },
             { label: "Vidro", valor: "Duplo" },
             { label: "Isolamento térmico", valor: "Standard" },
             { label: "Acabamento interior", valor: "Branco" },
             { label: "Acabamento exterior", valor: "Nogueira" }
+        ]
+    },
+    {
+        id: "janela-pvc-correr-branco",
+        categoria: "janelas",
+        material: "PVC",
+        nome: "Janela de Correr em PVC — Branco",
+        dimensoes: "150 x 120 cm",
+        abertura: "Corredeira",
+        imagens: [
+            "assets/images/products/janela-pvc-correr-branco.png"
+        ],
+        descricao: "Janela de correr em PVC, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura. Acabamento em branco, em ambas as faces.",
+        especificacoes: [
+            { label: "Categoria", valor: "Janela" },
+            { label: "Material", valor: "PVC" },
+            { label: "Dimensões", valor: "150 x 120 cm" },
+            { label: "Sentido de abertura", valor: "Corredeira" },
+            { label: "Vidro", valor: "Duplo" },
+            { label: "Isolamento térmico", valor: "Standard" },
+            { label: "Acabamento interior", valor: "Branco" },
+            { label: "Acabamento exterior", valor: "Branco" }
+        ]
+    },
+    {
+        id: "janela-pvc-correr-cinza",
+        categoria: "janelas",
+        material: "PVC",
+        nome: "Janela de Correr em PVC — Cinza Antracite",
+        dimensoes: "150 x 120 cm",
+        abertura: "Corredeira",
+        imagens: [
+            "assets/images/products/janela-pvc-correr-cinza.png"
+        ],
+        descricao: "Janela de correr em PVC, ideal para vãos largos onde se procura maximizar a entrada de luz sem ocupar espaço com a abertura. Acabamento em Cinza Antracite, em ambas as faces.",
+        especificacoes: [
+            { label: "Categoria", valor: "Janela" },
+            { label: "Material", valor: "PVC" },
+            { label: "Dimensões", valor: "150 x 120 cm" },
+            { label: "Sentido de abertura", valor: "Corredeira" },
+            { label: "Vidro", valor: "Duplo" },
+            { label: "Isolamento térmico", valor: "Standard" },
+            { label: "Acabamento interior", valor: "Cinza Antracite" },
+            { label: "Acabamento exterior", valor: "Cinza Antracite" }
         ]
     },
     {

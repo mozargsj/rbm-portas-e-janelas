@@ -408,6 +408,12 @@ nav .cta-button:hover {
     opacity: 0.85;
 }
 
+.suppliers-copy {
+    margin: 0;
+    color: var(--reference-paper);
+    font-size: var(--fs-body);
+}
+
 .suppliers-logos {
     display: flex;
     justify-content: center;

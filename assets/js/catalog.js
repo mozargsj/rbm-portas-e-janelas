@@ -148,10 +148,16 @@
         grid.innerHTML = "";
 
         if (products.length === 0) {
-            if (emptyMsg) emptyMsg.hidden = false;
+            if (emptyMsg) {
+                emptyMsg.textContent = "Nenhum produto encontrado com os filtros selecionados.";
+                emptyMsg.hidden = false;
+            }
             return;
         }
-        if (emptyMsg) emptyMsg.hidden = true;
+        if (emptyMsg) {
+            emptyMsg.hidden = true;
+            emptyMsg.textContent = "";
+        }
 
         products.forEach((product) => {
             const card = document.createElement("article");
